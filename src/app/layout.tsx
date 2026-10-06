@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Black_Ops_One, Bricolage_Grotesque, Figtree } from "next/font/google";
 import { SiteFooter } from "@/components/site-footer";
-import { PageLoader } from "@/components/page-loader";
+import EclipseSplash from "@/components/eclipse-splash";
 import { ScrollProgress } from "@/components/scroll-progress";
 import { SiteHeader } from "@/components/site-header";
 import { site } from "@/data/site";
@@ -53,7 +53,7 @@ export default function RootLayout({
         className={`${head.variable} ${body.variable} ${heroDisplay.variable} h-full`}
       >
         <body className="min-h-full flex flex-col">
-          <PageLoader />
+          <EclipseSplash />
           <ScrollProgress />
           <SiteHeader />
           <main className="flex-1">{children}</main>

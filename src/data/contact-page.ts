@@ -2,7 +2,7 @@ export type ContactChannelIcon = "phone" | "email" | "location" | "hours";
 
 export const contactPage = {
   hero: {
-    eyebrow: "Get in Touch",
+    eyebrow: "Contact Us",
     titleBefore: "Let's grow your",
     titleAccent: "business together",
     lead: "Book a free consultation. Tell us what you need — we reply with a clear plan, timeline, and quote.",

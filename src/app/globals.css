@@ -81,90 +81,6 @@ h1,h2,h3{font-family:var(--head);line-height:1.12;margin:0}
 .grad{background:linear-gradient(90deg,var(--gold),var(--gold2),var(--sky),var(--gold));background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;animation:gshift 6s linear infinite}
 @keyframes gshift{to{background-position:300% 0}}
 
-/* loader / splash — full logo on a light plate, gold frame, then exit */
-.loader{
-  position:fixed;inset:0;z-index:100;display:grid;place-items:center;overflow:hidden;
-  background:
-    radial-gradient(ellipse 42% 36% at 50% 46%, rgba(57,93,160,.34), transparent 68%),
-    radial-gradient(ellipse 28% 22% at 50% 86%, rgba(201,162,39,.16), transparent 70%),
-    #070B18;
-  animation:loaderOut .9s cubic-bezier(.7,0,.2,1) 2.45s forwards;
-}
-.loader::before{
-  content:"";position:absolute;inset:28px;border-radius:28px;pointer-events:none;
-  border:1px solid rgba(243,215,122,.32);
-  box-shadow:inset 0 0 0 1px rgba(127,161,230,.12);
-}
-.loader-in{
-  position:relative;z-index:1;text-align:center;color:#fff;
-  display:flex;flex-direction:column;align-items:center;gap:18px;
-  width:min(92vw,640px);
-  animation:loaderHold 2.45s ease forwards;
-}
-.loader-kicker{
-  margin:0;font-family:var(--body);font-size:12px;font-weight:700;
-  letter-spacing:.32em;text-transform:uppercase;color:var(--gold2);
-  opacity:0;animation:loaderFade .7s ease .12s forwards;
-}
-.loader-mark{position:relative;display:grid;place-items:center;width:100%;isolation:isolate}
-.loader-glow{
-  position:absolute;left:50%;top:54%;width:86%;height:120%;
-  transform:translate(-50%,-50%) scale(.72);border-radius:50%;
-  background:radial-gradient(circle,rgba(243,215,122,.34) 0%,rgba(127,161,230,.16) 46%,transparent 72%);
-  filter:blur(22px);opacity:0;z-index:0;pointer-events:none;
-  animation:loaderGlow 1.6s ease .16s forwards;
-}
-.loader-plate{
-  position:relative;z-index:1;width:100%;
-  padding:32px 40px;
-  border-radius:28px;
-  background:linear-gradient(180deg,#ffffff 0%,#f3f6fb 100%);
-  box-shadow:
-    0 28px 70px rgba(0,0,0,.42),
-    0 0 0 1px rgba(201,162,39,.5),
-    inset 0 1px 0 #fff;
-  opacity:0;
-  animation:loaderLogoIn 1s cubic-bezier(.2,.7,.2,1) .18s forwards;
-}
-.loader-logo{
-  position:relative;z-index:1;display:block;width:100%;height:auto;
-}
-.loader-line{
-  display:block;width:0;height:2px;border-radius:999px;
-  background:linear-gradient(90deg,transparent,var(--gold),var(--gold2),transparent);
-  opacity:0;animation:loaderLine .9s ease .7s forwards;
-}
-.loader-tag{
-  margin:0;max-width:36ch;font-size:14px;font-weight:500;letter-spacing:.04em;
-  color:rgba(231,234,243,.78);
-  opacity:0;animation:loaderFade .7s ease .85s forwards;
-}
-@keyframes loaderFade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-@keyframes loaderLogoIn{
-  from{opacity:0;transform:translateY(10px) scale(.98)}
-  to{opacity:1;transform:none}
-}
-@keyframes loaderGlow{
-  0%{opacity:0;transform:translate(-50%,-50%) scale(.75)}
-  100%{opacity:1;transform:translate(-50%,-50%) scale(1)}
-}
-@keyframes loaderLine{
-  0%{width:0;opacity:0}
-  24%{opacity:1}
-  100%{width:min(46vw,220px);opacity:1}
-}
-@keyframes loaderHold{
-  0%,88%{transform:scale(1)}
-  100%{transform:scale(.985)}
-}
-@keyframes loaderOut{to{opacity:0;visibility:hidden}}
-@media (max-width:600px){
-  .loader::before{inset:12px;border-radius:18px}
-  .loader-kicker{font-size:10px;letter-spacing:.22em}
-  .loader-plate{padding:20px 16px;border-radius:20px}
-  .loader-tag{font-size:13px}
-}
-
 /* wipe transition */
 .wipe{position:fixed;inset:0;z-index:90;background:var(--navy);transform:translateY(100%);pointer-events:none;display:grid;place-items:center}
 .wipe i{width:70px;height:70px;background:var(--gold);transform:rotate(45deg) scale(0);transition:transform .4s ease .1s}
@@ -1912,7 +1828,6 @@ footer a{text-decoration:none}
   .contact-cta-frame{min-height:220px}
 }
 @media (prefers-reduced-motion:reduce){
-  .loader{display:none}
   .mq,.orb,.chip,.vis .a,.vis .b,.grad,.caret,.cta,.scrollcue::after{animation:none!important}
   .enter{opacity:1;animation:none}
   .rv{opacity:1;transform:none}.rv.in{animation:none}

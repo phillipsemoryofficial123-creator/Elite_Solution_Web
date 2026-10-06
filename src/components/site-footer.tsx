@@ -71,22 +71,24 @@ export function SiteFooter() {
           <nav className="ft-col" aria-label="Footer">
             <h3>Explore</h3>
             <div className="fl">
-              {nav.map((item) =>
-                item.external ? (
-                  <a
-                    key={item.href}
-                    href={item.href}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {item.label}
-                  </a>
-                ) : (
-                  <Link key={item.href} href={item.href}>
-                    {item.cta ? "Contact" : item.label}
-                  </Link>
-                ),
-              )}
+              {nav
+                .filter((item) => !item.cta)
+                .map((item) =>
+                  item.external ? (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link key={item.label} href={item.href}>
+                      {item.label}
+                    </Link>
+                  ),
+                )}
             </div>
           </nav>
 

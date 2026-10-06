@@ -81,6 +81,7 @@ export const nav: {
     label: "E-portal",
     external: true,
   },
+  { href: "/contact", label: "Contact Us" },
   { href: "/contact", label: "Get Started", cta: true },
 ];
 

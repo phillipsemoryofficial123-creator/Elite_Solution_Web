@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import {
   useEffect,
   useId,
@@ -394,20 +395,47 @@ function ContactFormPanel() {
 }
 
 export function ContactStudioPage() {
-  const { channels } = contactPage;
+  const { hero } = contactPage;
 
   return (
     <div className="contact-studio">
-      <section className="sec contact-channels contact-channels-top">
-        <div className="w">
-          <Reveal className="contact-sec-head">
-            <p className="contact-eyebrow">{channels.eyebrow}</p>
-            <h1 className="contact-title">
-              {channels.titleBefore}{" "}
-              <span className="contact-accent">{channels.titleAccent}</span>
-            </h1>
-            <p className="contact-lead">{channels.lead}</p>
-          </Reveal>
+      <section className="contact-hero">
+        <div className="contact-hero-bg" aria-hidden="true">
+          <Image
+            src={hero.image}
+            alt=""
+            fill
+            priority
+            quality={90}
+            sizes="100vw"
+            className="contact-hero-bg-img"
+          />
+        </div>
+        <div className="w contact-hero-in">
+          <div className="contact-hero-copy">
+            <Reveal as="p" className="contact-eyebrow">
+              {hero.eyebrow}
+            </Reveal>
+            <Reveal>
+              <h1 className="contact-title contact-hero-title">
+                {hero.titleBefore}{" "}
+                <span className="contact-accent">{hero.titleAccent}</span>
+              </h1>
+            </Reveal>
+            <Reveal as="p" className="contact-lead" delay="80ms">
+              {hero.lead}
+            </Reveal>
+            <Reveal className="contact-highlights" delay="140ms">
+              {hero.highlights.map((item) => (
+                <div key={item.label} className="contact-highlight">
+                  <span className="contact-highlight-ic" aria-hidden="true">
+                    <ChannelIcon name={item.icon} />
+                  </span>
+                  <span>{item.label}</span>
+                </div>
+              ))}
+            </Reveal>
+          </div>
         </div>
       </section>
 

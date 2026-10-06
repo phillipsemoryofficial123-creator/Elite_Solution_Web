@@ -33,7 +33,7 @@ export function SiteHeader() {
             if (item.external) {
               return (
                 <a
-                  key={item.href}
+                  key={item.label}
                   href={item.href}
                   target="_blank"
                   rel="noreferrer"
@@ -48,7 +48,7 @@ export function SiteHeader() {
                 : pathname.startsWith(item.href);
             return (
               <Link
-                key={item.href}
+                key={item.label}
                 href={item.href}
                 aria-current={current ? "page" : undefined}
               >
