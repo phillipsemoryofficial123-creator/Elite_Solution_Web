@@ -1,9 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
-import { MagButton, TiltCard } from "@/components/interactions";
+import { TiltCard } from "@/components/interactions";
 import { ProjectDetailDialog } from "@/components/portfolio/project-detail-dialog";
 import { Reveal } from "@/components/reveal";
 import {
@@ -12,7 +11,7 @@ import {
 } from "@/data/portfolio-page";
 
 export function PortfolioStudioPage() {
-  const { hero, projects, process, cta } = portfolioStudioPage;
+  const { hero, projects, process } = portfolioStudioPage;
   const [active, setActive] = useState<PortfolioStudioProject | null>(null);
 
   return (
@@ -118,43 +117,6 @@ export function PortfolioStudioPage() {
               </Reveal>
             ))}
           </ol>
-        </div>
-      </section>
-
-      <section className="sec pf-cta">
-        <div className="w pf-cta-panel">
-          <div className="pf-cta-copy">
-            <Reveal>
-              <h2 className="pf-title">{cta.title}</h2>
-            </Reveal>
-            <Reveal as="p" className="pf-lead" delay="60ms">
-              {cta.lead}
-            </Reveal>
-            <Reveal className="pf-actions" delay="120ms">
-              <MagButton>
-                <Link className="btn gold mag" href={cta.primaryHref}>
-                  {cta.primaryLabel}
-                  <span aria-hidden="true"> →</span>
-                </Link>
-              </MagButton>
-              <MagButton>
-                <Link className="btn ghost mag pf-cta-ghost" href={cta.secondaryHref}>
-                  {cta.secondaryLabel}
-                </Link>
-              </MagButton>
-            </Reveal>
-          </div>
-          <Reveal className="pf-cta-media" delay="100ms">
-            <div className="pf-cta-frame">
-              <Image
-                src={cta.image}
-                alt=""
-                fill
-                sizes="(max-width:900px) 100vw, 42vw"
-                className="pf-cta-img"
-              />
-            </div>
-          </Reveal>
         </div>
       </section>
 

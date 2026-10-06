@@ -726,6 +726,187 @@ export const portfolioStudioPage = {
         ],
       },
     },
+    {
+      id: "taleem-foundation",
+      title: "The Taleem Foundation",
+      category: "seo",
+      categoryLabel: "SEO",
+      description:
+        "Nonprofit expanding education access in Pakistan, with a focus on girls' education, skills development, and community empowerment.",
+      image: "/images/Logos/Taleem-Foundation-logo.jpg",
+      imageFit: "contain",
+      href: "/portfolio",
+      details: {
+        intro:
+          "The Taleem Foundation is a nonprofit working to expand education access in Pakistan, with a focus on girls' education, skills development, vocational training, and community empowerment. Its website, thetaleemfoundation.com, is built to reach donors and volunteers, especially in the US. I have led the foundation's SEO since April 2025, starting with a full audit and building a long-term content and authority program.",
+        sections: [
+          {
+            heading: "The challenge",
+            paragraphs: [
+              "My April 2025 audit found a site with a clear mission but almost no search presence. It had zero US organic traffic and no ranking keywords, and a backlink profile made up mostly of toxic, low-authority links (Page Authority 0 to 6). Pages overused the same phrases (\"become a volunteer,\" \"achievements\") with no long-tail targeting. The site also had redirect-chain links, missing meta descriptions and H1 tags, and slow pages. Nonprofit competitors such as ITA (itacec.org) and Zindagi Trust ranked for valuable terms like \"girls education Pakistan\" and \"free education programs in Pakistan,\" where the foundation had no visibility.",
+            ],
+          },
+          {
+            heading: "What I did",
+            items: [
+              { label: "SEO audit and roadmap", text: "Delivered a full technical, on-page, and off-page audit with keyword density analysis by page, a competitor keyword gap analysis, and a 3-phase action plan: fix and disavow, optimize keywords and launch content, then outreach and PR." },
+              { label: "Content strategy for a US donor audience", text: "Built a 135-topic content calendar and published 87 blog posts. Topics included the state of education in Pakistan, girls' education, the urban-rural divide, curriculum and policy reform, EdTech and digital learning, and student success stories. Many posts were framed for Western readers, such as \"Why Educating Pakistani Girls Should Matter to the West\" and \"How Pakistani-American Charities Are Building Schools Back Home.\" Publishing grew the site from 457 to 1,100+ crawlable pages." },
+              { label: "Link building", text: "Built 286 live backlinks (246 do-follow) through Web 2.0s, blog commenting, social profiles, directories, business listings, and social bookmarking, plus a guest post on Youth Ki Awaaz (DA 66)." },
+              { label: "Toxic link cleanup", text: "Identified 85 spammy referring domains and disavowed 49 harmful links, as the audit called for." },
+              { label: "Technical SEO and reporting", text: "Ran recurring Ahrefs audits to fix redirects, meta tags, and headers, and delivered 18 SEO reports over 16 months." },
+            ],
+          },
+          {
+            heading: "Results (April 2025 to October 2026)",
+            paragraphs: [
+              "Content library: 87 published articles, growing the site to 1,100+ pages.",
+              "Site health: 100 score maintained as the site more than doubled in size.",
+              "From zero ranking keywords to the foundation's first page-one ranking and first Google AI Overview appearance (August 2026).",
+              "Backlink profile shifted from mostly toxic links to a cleaned profile of 246 do-follow links built through white-hat methods.",
+            ],
+          },
+          { heading: "Tools", paragraphs: ["Ahrefs, Semrush, Google Search Console, Google Analytics, Google Sheets."] },
+        ],
+      },
+    },
+    {
+      id: "cashingtech",
+      title: "CashingTech",
+      category: "web",
+      categoryLabel: "Web Development",
+      description:
+        "Electronics buyback platform that pays cash for used phones, tablets, laptops, and other devices, with instant quotes and free prepaid shipping.",
+      image: "/images/Logos/CashingTech-logo.jpg",
+      imageFit: "contain",
+      href: "/portfolio",
+      details: {
+        intro:
+          "CashingTech is an electronics buyback platform that pays cash for used phones, tablets, laptops, and other devices, with instant quotes, free prepaid shipping, and payment within 24 to 48 hours of inspection. I designed and developed the complete website, cashingtech.com, from the ground up.",
+        sections: [
+          {
+            heading: "The goal",
+            paragraphs: [
+              "The client needed a platform that could turn a visitor into a seller in about 60 seconds: pick a device, choose its condition, see an offer, and ship it. The site also had to serve two very different audiences, individual consumers selling one device and businesses trading in 20 or more, while building enough trust for people to mail valuable electronics to an online company.",
+            ],
+          },
+          {
+            heading: "What I built",
+            items: [
+              { label: "Instant quote flow", text: "A step-by-step selling journey across 12 device categories (phones, tablets, laptops, desktops, smartwatches, game consoles, graphics cards, cameras, audio, drones, VR headsets, and monitors), with dedicated brand and model pages such as iPhone, Samsung, iPad, and MacBook. Sellers grade their device as Flawless, Good, Fair, or Broken to get an instant offer." },
+              { label: "My Box cart and checkout", text: "A multi-device cart that lets sellers add several items to one shipment, browse without an account, and sign in only at checkout. Sellers choose payment by check, PayPal, or Zelle." },
+              { label: "User accounts", text: "Sign-in and account flow tied to checkout, so sellers can track their trade-ins." },
+              { label: "Bulk trade-in system", text: "A B2B quote request form with dynamic device rows (category and condition) that users can add as needed, plus spreadsheet upload (.xls, .xlsx, .csv, up to 5 MB) for large inventories." },
+              { label: "Business and support pages", text: "IT Asset Disposition (ITAD), custom quote, affiliate program, support and FAQs, contact, and about pages, plus a full legal set (privacy policy, terms, cookie policy, user agreement, law enforcement, and accessibility)." },
+              { label: "Conversion-focused UI", text: "A bold homepage with a phone mockup showing sample offers, a 3-step Quote, Ship, Get Paid process section, trust badges, a scrolling press logo strip, testimonials, and an expandable FAQ accordion." },
+              { label: "Blog module", text: "A built-in blog section with article cards and individual post pages." },
+              { label: "Responsive design", text: "Fully responsive layouts across desktop, tablet, and mobile, with a slide-out cart and a mobile-friendly navigation." },
+            ],
+          },
+          {
+            heading: "The result",
+            paragraphs: [
+              "A complete, production-ready buyback platform that handles consumer sales and business trade-ins in one place, with a clean, modern interface built to convert visitors into sellers.",
+            ],
+          },
+          {
+            heading: "Skills",
+            paragraphs: [
+              "Web development, UI/UX design, front-end development, e-commerce flow development, form development, responsive design.",
+            ],
+          },
+        ],
+      },
+    },
+    {
+      id: "3-chefs-persian",
+      title: "3 Chefs Persian",
+      category: "web",
+      categoryLabel: "Web Development",
+      description:
+        "Authentic Persian restaurant in Aurora, Illinois, with dine-in, takeout, and catering, and a website built for direct ordering.",
+      image: "/images/Logos/3-Chefs-logo.jpg",
+      imageFit: "contain",
+      href: "/portfolio",
+      details: {
+        intro:
+          "3 Chefs Persian Cuisine is an authentic Persian restaurant in Aurora, Illinois, offering dine-in, takeout, and catering for events. I designed and developed the restaurant's website, 3chefs.net, giving the business its own online home and a direct ordering channel for customers.",
+        sections: [
+          {
+            heading: "The goal",
+            paragraphs: [
+              "The restaurant needed a website that would reflect the warmth and tradition of Persian home cooking, make its menu easy to browse, and turn visitors into orders and catering inquiries, without relying entirely on third-party delivery apps.",
+            ],
+          },
+          {
+            heading: "What I built",
+            items: [
+              { label: "Online ordering", text: "Customers can browse the menu and order for dine-in, pickup, or delivery directly from 3chefs.net, and reserve a table ahead of a visit." },
+              { label: "Digital menu", text: "An organized, easy-to-scan menu of Persian dishes, including charcoal-grilled kebabs, stews, rice, appetizers, shawarma bowls and wraps, family platters, and desserts such as baghlava, with descriptions and prices." },
+              { label: "Catering section", text: "A dedicated family-style live catering section for weddings, birthdays, corporate events, and gatherings, with a direct call or text line to book the chef on site." },
+              { label: "Brand-focused design", text: "A warm, inviting visual design built around the restaurant's \"Taste the tradition\" identity, with a hero section, a food gallery, and clear Order Online calls to action." },
+              { label: "Location and contact", text: "The Aurora address, phone, email, and hours (Monday through Sunday, 10:30 AM to 9:30 PM) so local customers can find and reach the restaurant quickly." },
+              { label: "Responsive design", text: "Fully responsive layouts across desktop, tablet, and mobile, since most restaurant visitors browse and order on their phones." },
+            ],
+          },
+          {
+            heading: "The result",
+            paragraphs: [
+              "A clean, modern restaurant website that gives 3 Chefs a professional online presence, a direct ordering channel, and a simple way to book catering, all from one place.",
+            ],
+          },
+          {
+            heading: "Skills",
+            paragraphs: [
+              "Web design, web development, UI/UX design, restaurant website development, online ordering integration, responsive design.",
+            ],
+          },
+        ],
+      },
+    },
+    {
+      id: "broaster-chickens",
+      title: "Broaster Chickens",
+      category: "seo",
+      categoryLabel: "SEO",
+      description:
+        "Chicago-area fast food brand serving genuine pressure-fried broasted chicken, sandwiches, smash burgers, and sides, with online ordering.",
+      image: "/images/Logos/Broaster-Chickens-logo.jpg",
+      imageFit: "contain",
+      href: "/portfolio",
+      details: {
+        intro:
+          "Broaster Chickens is a Chicago-area fast food brand serving genuine pressure-fried broasted chicken, broasted bird boxes, chicken sandwiches, smash burgers, appetizers, and sides, with online ordering through broasterchickens.com. The website was designed and developed by Elite Solution USA, and we handled its SEO foundation from launch in late 2025: keyword research, page-level keyword mapping, blog architecture, and technical monitoring.",
+        sections: [
+          {
+            heading: "The challenge",
+            paragraphs: [
+              'The brand launched on a brand-new domain into a crowded fried chicken market, competing against national names like Krispy Krunchy Chicken (90,000+ monthly US searches) and established local chicken and burger spots. In November 2025 the site ranked for only 2 keywords, "broaster chicken" (#55) and "broaster chickens" (#62), with no backlinks. The goal was to give every menu category its own search target from day one, so the site could grow beyond its brand name.',
+            ],
+          },
+          {
+            heading: "What I did",
+            items: [
+              { label: "Website build support", text: "Worked alongside the Elite Solution USA development team on the new WooCommerce site, making sure the shop, product categories, and blog were structured for search from launch." },
+              { label: "Keyword research", text: 'Researched 65+ keywords across brand, menu, and local intent, covering "genuine broaster chicken," "broaster chicken franchise," "broasted chicken near me," "pressure cooker fried chicken," "fried chicken sandwich," "best smash burgers chicago," and competitor searches like "krispy krunchy chicken chicago."' },
+              { label: "Page-level keyword mapping", text: "Assigned focus and LSI keywords to 13 key URLs: the homepage, shop, menu categories (appetizers, broasted bird boxes, sandwiches, sides, smash burgers), a hero product page (Jalapeno Smasher), and the blog." },
+              { label: "Blog architecture", text: "Planned 4 blog categories, each mapped to a keyword cluster: Healthy Fast Food, Fast Food Deals and Coupons, Burgers and Sandwiches, and Fast Food Recipes and DIY Hacks. These give the brand a long-term content path into recipe and deal searches." },
+              { label: "Technical SEO", text: "Set up Ahrefs site monitoring at launch. The site passed its first full audit with a 100 health score and 0 errors across 151 crawled URLs, with only minor warnings (missing alt text, internal linking) flagged for cleanup." },
+              { label: "Reporting", text: "Delivered an SEO report covering site health, keyword positions, and the off-page baseline." },
+            ],
+          },
+          {
+            heading: "Results (Launch, November 2025)",
+            paragraphs: [
+              "New website built by Elite Solution USA and launched SEO-ready.",
+              "100 site health score with 0 errors at launch.",
+              "13 pages keyword-mapped across 65+ target keywords.",
+              'First brand rankings for "broaster chicken" (1K monthly searches) and "broaster chickens".',
+            ],
+          },
+          { heading: "Tools", paragraphs: ["Ahrefs, Google Search Console, WooCommerce, Google Sheets."] },
+        ],
+      },
+    },
   ] satisfies PortfolioStudioProject[],
   process: {
     eyebrow: "Our Process",
@@ -758,14 +939,5 @@ export const portfolioStudioPage = {
         body: "Go live and provide ongoing support.",
       },
     ],
-  },
-  cta: {
-    title: "Have a Project in Mind?",
-    lead: "Let's create something amazing together. Get in touch with our team today for a free consultation and quote.",
-    primaryLabel: "Get a Free Quote",
-    primaryHref: "/contact",
-    secondaryLabel: "Contact Us",
-    secondaryHref: "/contact",
-    image: "/images/about-cta-laptop.jpg",
   },
 } as const;

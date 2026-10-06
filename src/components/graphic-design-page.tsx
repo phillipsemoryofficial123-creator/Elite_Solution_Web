@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "@/components/reveal";
 import { MagButton } from "@/components/interactions";
-import { ServiceNewsletter } from "@/components/service-newsletter";
 import {
   graphicDesignPage,
   type GraphicProcessIcon,
@@ -252,7 +251,6 @@ export function GraphicDesignPage() {
         </div>
       </section>
 
-      <ServiceNewsletter />
     </div>
   );
 }

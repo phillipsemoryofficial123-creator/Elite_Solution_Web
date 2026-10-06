@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Black_Ops_One, Bricolage_Grotesque, Figtree } from "next/font/google";
+import { ServiceNewsletter } from "@/components/service-newsletter";
 import { SiteFooter } from "@/components/site-footer";
 import EclipseSplash from "@/components/eclipse-splash";
 import { ScrollProgress } from "@/components/scroll-progress";
@@ -57,6 +58,7 @@ export default function RootLayout({
           <ScrollProgress />
           <SiteHeader />
           <main className="flex-1">{children}</main>
+          <ServiceNewsletter />
           <SiteFooter />
         </body>
       </html>

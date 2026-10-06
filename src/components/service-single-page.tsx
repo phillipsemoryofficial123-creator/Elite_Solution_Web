@@ -2,7 +2,6 @@ import Image from "next/image";
 import { Reveal } from "@/components/reveal";
 import { GraphicDesignPage } from "@/components/graphic-design-page";
 import { ServiceDetailHero } from "@/components/service-detail-hero";
-import { ServiceNewsletter } from "@/components/service-newsletter";
 import { ServiceStack } from "@/components/service-stack";
 import { ServiceZigzag } from "@/components/service-zigzag";
 import { getServiceDetail } from "@/data/service-details";
@@ -133,7 +132,6 @@ export function ServiceSinglePage({
         </div>
       )}
 
-      <ServiceNewsletter />
     </>
   );
 
