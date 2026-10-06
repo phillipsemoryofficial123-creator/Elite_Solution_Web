@@ -55,7 +55,7 @@ export const careersPage = {
         mode: "On-site",
         location: "Gulshan-e-Iqbal Phase 5",
         salary: "80,000",
-        status: "closed",
+        status: "closed" as CareersJob["status"],
         description:
           "We are seeking a talented and motivated Next.js Developer to join our team. In this role, you will be responsible for building and maintaining modern web applications with clean, scalable front-end architecture.",
         href: "/contact",
