@@ -12,21 +12,30 @@ export function PageLoader() {
       setShow(false);
       return;
     }
-    const t = setTimeout(() => setShow(false), 3000);
-    return () => clearTimeout(t);
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const t = setTimeout(() => {
+      document.body.style.overflow = previousOverflow;
+      setShow(false);
+    }, 3400);
+    return () => {
+      clearTimeout(t);
+      document.body.style.overflow = previousOverflow;
+    };
   }, []);
 
   if (!show) return null;
 
   return (
-    <div className="loader" aria-hidden="true">
+    <div className="loader" role="status" aria-label="Loading Elite Solutions USA">
       <div className="loader-in">
+        <p className="loader-kicker">Elite Solutions USA</p>
         <div className="loader-mark">
           <span className="loader-glow" />
           <div className="loader-plate">
             <Image
               src="/images/elite-logo.png"
-              alt=""
+              alt="Elite Solution"
               width={839}
               height={288}
               priority
@@ -35,6 +44,7 @@ export function PageLoader() {
           </div>
         </div>
         <span className="loader-line" />
+        <p className="loader-tag">Financial and non-financial services</p>
       </div>
     </div>
   );

@@ -10,6 +10,34 @@ export const site = {
   websiteLabel: "www.elitesolutionusa.com",
   location: "Naperville, Illinois",
   address: "Naperville, Illinois 60563",
+  offices: [
+    {
+      id: "usa",
+      label: "USA Office",
+      email: "usa@elitesolutionusa.com",
+      phone: "+1 (832) 951-2823",
+      phoneHref: "tel:+18329512823",
+      address: "Naperville, Illinois 60563",
+    },
+    {
+      id: "ksa",
+      label: "KSA Office",
+      email: "ksa@elitesolutionusa.com",
+      phone: "(+966) 56-1377801",
+      phoneHref: "tel:+966561377801",
+      address:
+        "Prince Nawaf Street, Building No 32, Suit No 201, Al Khobar, Saudi Arabia",
+    },
+    {
+      id: "pakistan",
+      label: "Pakistan Office",
+      email: "pak@elitesolutionusa.com",
+      phone: "(+92) 336-2129231",
+      phoneHref: "tel:+923362129231",
+      address:
+        "Good Time Apartments, Office No# M4, Besides B-10 Main University Rd, Gulshan 13-B Block 13 B Gulshan-e-Iqbal, Karachi, Pakistan",
+    },
+  ],
   founder: {
     name: "Usman Tehseen",
     qualifications: "ACCA, MBA (Marketing), University of Oxford",
@@ -17,6 +45,11 @@ export const site = {
     focus: "Finance, technology, offshore talent and digital growth",
   },
   social: [
+    {
+      id: "facebook",
+      label: "Facebook",
+      href: "https://www.facebook.com/people/Elite-Solutions/61569394719342/",
+    },
     {
       id: "linkedin",
       label: "LinkedIn",
@@ -34,13 +67,20 @@ export const nav: {
   href: string;
   label: string;
   cta?: boolean;
+  external?: boolean;
 }[] = [
   { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
   { href: "/portfolio", label: "Portfolio" },
-  { href: "/about", label: "About" },
   { href: "/pricing", label: "Pricing" },
   { href: "/careers", label: "Careers" },
+  { href: "/csr", label: "CSR" },
+  {
+    href: "https://elitebase-neon.vercel.app/",
+    label: "E-portal",
+    external: true,
+  },
   { href: "/contact", label: "Get Started", cta: true },
 ];
 

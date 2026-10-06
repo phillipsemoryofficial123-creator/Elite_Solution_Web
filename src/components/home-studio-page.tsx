@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { HomeFeaturedProjects } from "@/components/home/featured-projects";
 import { MagButton, TiltCard } from "@/components/interactions";
 import { Reveal } from "@/components/reveal";
 import { ServiceGrid } from "@/components/service-card";
@@ -137,33 +138,7 @@ export function HomeStudioPage() {
               {portfolio.lead}
             </Reveal>
           </div>
-          <ul className="home-pf-grid">
-            {portfolio.projects.map((project, i) => (
-              <li key={project.title}>
-                <Reveal delay={`${i * 70}ms`}>
-                  <TiltCard className="home-pf-card">
-                    <Link className="home-pf-card-link" href={project.href}>
-                      <div className="home-pf-media">
-                        <Image
-                          src={project.image}
-                          alt=""
-                          fill
-                          sizes="(max-width:900px) 100vw, 33vw"
-                          className="home-pf-img"
-                        />
-                      </div>
-                      <strong className="home-pf-title">{project.title}</strong>
-                      <p className="home-pf-body">{project.body}</p>
-                      <span className="home-pf-link">
-                        View project
-                        <span aria-hidden="true"> →</span>
-                      </span>
-                    </Link>
-                  </TiltCard>
-                </Reveal>
-              </li>
-            ))}
-          </ul>
+          <HomeFeaturedProjects projects={portfolio.projects} />
           <Reveal className="home-sec-cta">
             <MagButton>
               <Link className="btn gold mag" href={portfolio.ctaHref}>

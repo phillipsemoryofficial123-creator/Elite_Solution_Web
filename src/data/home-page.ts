@@ -72,12 +72,7 @@ export const homePage = {
     lead: portfolioStudioPage.hero.lead,
     ctaLabel: "View full portfolio",
     ctaHref: "/portfolio",
-    projects: featuredPortfolio.map((p) => ({
-      title: p.title,
-      body: p.description,
-      image: p.image,
-      href: p.href,
-    })),
+    projects: featuredPortfolio,
   },
   pricing: {
     eyebrow: pricingPage.hero.eyebrow,

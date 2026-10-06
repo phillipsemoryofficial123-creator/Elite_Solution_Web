@@ -1,5 +1,3 @@
-import { site } from "@/data/site";
-
 export type ContactChannelIcon = "phone" | "email" | "location" | "hours";
 
 export const contactPage = {
@@ -20,36 +18,6 @@ export const contactPage = {
     titleBefore: "Talk to",
     titleAccent: "Elite Solutions",
     lead: "Prefer a call, email, or a short form? Pick what works — we are easy to reach.",
-    items: [
-      {
-        icon: "phone" as ContactChannelIcon,
-        label: "Phone",
-        value: site.phone,
-        href: site.phoneHref,
-        hint: "Mon–Fri, business hours (CT)",
-      },
-      {
-        icon: "email" as ContactChannelIcon,
-        label: "Email",
-        value: site.email,
-        href: `mailto:${site.email}`,
-        hint: "We typically reply within one business day",
-      },
-      {
-        icon: "location" as ContactChannelIcon,
-        label: "Office",
-        value: site.address,
-        href: `https://maps.google.com/?q=${encodeURIComponent(site.address)}`,
-        hint: "",
-      },
-      {
-        icon: "hours" as ContactChannelIcon,
-        label: "Hours",
-        value: "Mon – Fri · 9:00 AM – 6:00 PM CT",
-        href: null,
-        hint: "Weekend by appointment",
-      },
-    ],
   },
   form: {
     eyebrow: "Consultation",

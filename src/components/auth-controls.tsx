@@ -1,17 +1,17 @@
 "use client";
 
-import { Show, SignInButton, UserButton } from "@clerk/nextjs";
+import { Show, UserButton } from "@clerk/nextjs";
+import Link from "next/link";
 
-export function AuthControls() {
+export function GetStartedMenu({
+  label,
+  className = "",
+}: {
+  label: string;
+  className?: string;
+}) {
   return (
-    <div className="auth-controls">
-      <Show when="signed-out">
-        <SignInButton mode="modal">
-          <button type="button" className="auth-signin">
-            Sign in
-          </button>
-        </SignInButton>
-      </Show>
+    <div className={`get-started ${className}`.trim()}>
       <Show when="signed-in">
         <UserButton
           appearance={{
@@ -21,6 +21,9 @@ export function AuthControls() {
           }}
         />
       </Show>
+      <Link className="call" href="/sign-in">
+        {label}
+      </Link>
     </div>
   );
 }

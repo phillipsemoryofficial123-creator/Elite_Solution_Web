@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { MagButton, TiltCard } from "@/components/interactions";
+import { ProjectDetailDialog } from "@/components/portfolio/project-detail-dialog";
 import { Reveal } from "@/components/reveal";
 import {
   portfolioStudioPage,
@@ -13,20 +14,6 @@ import {
 export function PortfolioStudioPage() {
   const { hero, projects, process, cta } = portfolioStudioPage;
   const [active, setActive] = useState<PortfolioStudioProject | null>(null);
-
-  useEffect(() => {
-    if (!active) return;
-    const onKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setActive(null);
-    };
-    const previous = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    window.addEventListener("keydown", onKey);
-    return () => {
-      document.body.style.overflow = previous;
-      window.removeEventListener("keydown", onKey);
-    };
-  }, [active]);
 
   return (
     <div className="pf-studio">
@@ -171,56 +158,7 @@ export function PortfolioStudioPage() {
         </div>
       </section>
 
-      {active ? (
-        <div
-          className="pf-detail"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="pf-detail-title"
-          onClick={() => setActive(null)}
-        >
-          <article className="pf-card pf-detail-card" onClick={(event) => event.stopPropagation()}>
-            <div className="pf-card-media">
-              <Image
-                src={active.image}
-                alt=""
-                fill
-                sizes="640px"
-                className={`pf-card-img${active.imageFit === "contain" ? " fit-contain" : ""}`}
-              />
-            </div>
-            <h3 id="pf-detail-title" className="pf-card-title">
-              {active.title}
-            </h3>
-            <div className="pf-detail-copy">
-              {active.details ? (
-                <>
-                  <p>{active.details.intro}</p>
-                  {active.details.sections.map((section) => (
-                    <section key={section.heading}>
-                      <h4>{section.heading}</h4>
-                      {section.paragraphs?.map((paragraph) => (
-                        <p key={paragraph}>{paragraph}</p>
-                      ))}
-                      {section.items?.map((item) => (
-                        <p key={item.label}>
-                          <strong>{item.label}: </strong>
-                          {item.text}
-                        </p>
-                      ))}
-                    </section>
-                  ))}
-                </>
-              ) : (
-                <p>{active.description}</p>
-              )}
-            </div>
-            <button type="button" className="pf-card-btn" onClick={() => setActive(null)}>
-              Close
-            </button>
-          </article>
-        </div>
-      ) : null}
+      <ProjectDetailDialog project={active} onClose={() => setActive(null)} />
     </div>
   );
 }

@@ -14,6 +14,12 @@ function SocialIcon({ id }: { id: SocialId }) {
   };
 
   switch (id) {
+    case "facebook":
+      return (
+        <svg {...common}>
+          <path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 2.146 2.146 0 0 0-1.637.247c-.39.242-.583.64-.583 1.198v2.526h3.29l-.433 3.667h-2.857v7.98H9.101Z" />
+        </svg>
+      );
     case "linkedin":
       return (
         <svg {...common}>
@@ -65,11 +71,22 @@ export function SiteFooter() {
           <nav className="ft-col" aria-label="Footer">
             <h3>Explore</h3>
             <div className="fl">
-              {nav.map((item) => (
-                <Link key={item.href} href={item.href}>
-                  {item.cta ? "Contact" : item.label}
-                </Link>
-              ))}
+              {nav.map((item) =>
+                item.external ? (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <Link key={item.href} href={item.href}>
+                    {item.cta ? "Contact" : item.label}
+                  </Link>
+                ),
+              )}
             </div>
           </nav>
 
@@ -99,16 +116,14 @@ export function SiteFooter() {
                 <span>Email</span>
                 <a href={`mailto:${site.email}`}>{site.email}</a>
               </li>
-              <li>
-                <span>Office</span>
-                <p>{site.address}</p>
-              </li>
-              <li>
-                <span>Web</span>
-                <a href={site.website} target="_blank" rel="noreferrer">
-                  {site.websiteLabel}
-                </a>
-              </li>
+              {site.offices.map((office) => (
+                <li key={office.id}>
+                  <span>{office.label}</span>
+                  <a href={`mailto:${office.email}`}>{office.email}</a>
+                  <p>{office.address}</p>
+                  <a href={office.phoneHref}>{office.phone}</a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>

@@ -394,7 +394,7 @@ function ContactFormPanel() {
 }
 
 export function ContactStudioPage() {
-  const { channels, form } = contactPage;
+  const { channels } = contactPage;
 
   return (
     <div className="contact-studio">
@@ -408,60 +408,35 @@ export function ContactStudioPage() {
             </h1>
             <p className="contact-lead">{channels.lead}</p>
           </Reveal>
-          <div className="contact-channel-grid">
-            {channels.items.map((item, i) => {
-              const inner = (
-                <>
-                  <span className="contact-channel-ic" aria-hidden="true">
-                    <ChannelIcon name={item.icon} />
-                  </span>
-                  <span className="contact-channel-label">{item.label}</span>
-                  <strong className="contact-channel-value">{item.value}</strong>
-                  {item.hint ? (
-                    <span className="contact-channel-hint">{item.hint}</span>
-                  ) : null}
-                </>
-              );
-              return (
-                <Reveal key={item.label} delay={`${i * 60}ms`}>
-                  {item.href ? (
-                    <a
-                      className="contact-channel"
-                      href={item.href}
-                      {...(item.href.startsWith("http")
-                        ? { target: "_blank", rel: "noopener noreferrer" }
-                        : {})}
-                    >
-                      {inner}
-                    </a>
-                  ) : (
-                    <div className="contact-channel">{inner}</div>
-                  )}
-                </Reveal>
-              );
-            })}
-          </div>
         </div>
       </section>
 
       <section className="sec contact-form-sec" id="consultation">
         <div className="w contact-form-layout">
-          <Reveal className="contact-form-intro">
-            <p className="contact-eyebrow">{form.eyebrow}</p>
-            <h2 className="contact-title">
-              {form.titleBefore}{" "}
-              <span className="contact-accent">{form.titleAccent}</span>
-            </h2>
-            <p className="contact-lead">{form.lead}</p>
-            <ul className="contact-form-points">
-              <li>Clear scope and timeline in writing</li>
-              <li>Honest pricing — no surprise fees</li>
-              <li>One team for finance and digital growth</li>
-            </ul>
-          </Reveal>
-          <Reveal delay="100ms">
-            <ContactFormPanel />
-          </Reveal>
+          <div className="contact-office-col">
+            <div className="contact-office-list">
+              {site.offices.map((office, i) => (
+                <Reveal key={office.id} delay={`${60 + i * 50}ms`}>
+                  <div className="contact-channel">
+                    <span className="contact-channel-ic" aria-hidden="true">
+                      <ChannelIcon name="location" />
+                    </span>
+                    <span className="contact-channel-label">{office.label}</span>
+                    <strong className="contact-channel-value">{office.address}</strong>
+                    <span className="contact-office-links">
+                      <a href={`mailto:${office.email}`}>{office.email}</a>
+                      <a href={office.phoneHref}>{office.phone}</a>
+                    </span>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+          <div className="contact-form-main">
+            <Reveal delay="100ms">
+              <ContactFormPanel />
+            </Reveal>
+          </div>
         </div>
       </section>
     </div>

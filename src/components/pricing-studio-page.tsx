@@ -9,6 +9,7 @@ import {
   pricingPage,
   type PricingHighlightIcon,
   type PricingNonFinIcon,
+  type PricingPlanIcon,
 } from "@/data/pricing-page";
 
 function HighlightIcon({ name }: { name: PricingHighlightIcon }) {
@@ -118,9 +119,77 @@ function NonFinIcon({ name }: { name: PricingNonFinIcon }) {
   }
 }
 
+function PlanIcon({ name }: { name: PricingPlanIcon }) {
+  const common = {
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 1.75,
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+    "aria-hidden": true as const,
+  };
+
+  switch (name) {
+    case "spark":
+      return (
+        <svg {...common}>
+          <path d="M12 3.2 13.4 8 18.2 9.4 13.4 10.8 12 15.6 10.6 10.8 5.8 9.4 10.6 8 12 3.2z" />
+          <path d="M18 14.2 18.7 16.3 20.8 17 18.7 17.7 18 19.8 17.3 17.7 15.2 17 17.3 16.3 18 14.2z" />
+        </svg>
+      );
+    case "rocket":
+      return (
+        <svg {...common}>
+          <path d="M12 3c2.8 2.6 4.6 6.2 4.6 10.2L12 16.2 7.4 13.2C7.4 9.2 9.2 5.6 12 3z" />
+          <path d="M9.2 13.4 6.4 16.6" />
+          <path d="M14.8 13.4 17.6 16.6" />
+          <path d="M10.2 16.8 9.2 20.2 12 18.4l2.8 1.8-1-3.4" />
+          <circle cx="12" cy="9.2" r="1.35" />
+        </svg>
+      );
+    case "crown":
+      return (
+        <svg {...common}>
+          <path d="M3.5 16.2 5.6 8.4l4.1 3.8L12 6.2l2.3 6 4.1-3.8 2.1 7.8H3.5z" />
+          <path d="M5.2 16.2h13.6v2.2a1.4 1.4 0 0 1-1.4 1.4H6.6a1.4 1.4 0 0 1-1.4-1.4v-2.2z" />
+        </svg>
+      );
+  }
+}
+
+function PriceSpark({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M12 2.4 13.5 8.2 19.4 9.6 13.5 11.1 12 16.8 10.5 11.1 4.6 9.6 10.5 8.2 12 2.4z" />
+      <path d="M18.2 13.6 18.9 15.8 21.1 16.5 18.9 17.2 18.2 19.4 17.5 17.2 15.3 16.5 17.5 15.8 18.2 13.6z" />
+    </svg>
+  );
+}
+
+function PriceCheck() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" aria-hidden="true">
+      <path d="M5.2 12.4 9.6 16.6 18.8 7.4" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function formatUsd(value: number, plus: boolean) {
+  const amount = Math.round(value).toLocaleString("en-US");
+  return `$${amount}${plus ? "+" : ""}`;
+}
+
 export function PricingStudioPage() {
-  const { hero, discovery, nonFinancial, faq } = pricingPage;
+  const { hero, discovery, plans, nonFinancial, faq } = pricingPage;
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [billing, setBilling] = useState<"monthly" | "yearly">("monthly");
+  const rate = billing === "yearly" ? plans.yearlyRate : 1;
 
   return (
     <div className="price-studio">
@@ -210,6 +279,108 @@ export function PricingStudioPage() {
               </Link>
             </MagButton>
           </Reveal>
+        </div>
+      </section>
+
+      <section className="sec price-plans" id="plans">
+        <div className="w">
+          <div className="price-sec-head">
+            <Reveal>
+              <p className="price-plans-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden="true">
+                  <path d="M20 13.2 12.8 20a2 2 0 0 1-2.8 0L3 13V4h9l8 9.2z" strokeLinecap="round" strokeLinejoin="round" />
+                  <circle cx="7.5" cy="7.5" r="1.1" fill="currentColor" stroke="none" />
+                </svg>
+                {plans.eyebrow}
+              </p>
+            </Reveal>
+            <Reveal>
+              <h2 className="price-title">
+                {plans.titleBefore}{" "}
+                <span className="price-accent">{plans.titleAccent}</span>
+              </h2>
+            </Reveal>
+            <Reveal as="p" className="price-lead" delay="60ms">
+              {plans.lead}
+            </Reveal>
+            <Reveal delay="100ms">
+              <div className="price-billing" role="group" aria-label="Billing period">
+                <button
+                  type="button"
+                  aria-pressed={billing === "monthly"}
+                  onClick={() => setBilling("monthly")}
+                >
+                  Monthly
+                </button>
+                <button
+                  type="button"
+                  aria-pressed={billing === "yearly"}
+                  onClick={() => setBilling("yearly")}
+                >
+                  Yearly
+                  <span className="price-save">{plans.saveLabel}</span>
+                </button>
+              </div>
+            </Reveal>
+          </div>
+
+          <ul className="price-plan-grid">
+            {plans.items.map((plan, i) => {
+              const amount = plan.amount * rate;
+              const rangeMin = plan.rangeMin * rate;
+              const rangeMax = plan.rangeMax * rate;
+              return (
+                <Reveal
+                  key={plan.id}
+                  as="li"
+                  className={`price-plan${plan.featured ? " featured" : ""}`}
+                  delay={`${120 + i * 80}ms`}
+                >
+                  {plan.featured && "badge" in plan ? (
+                    <span className="price-plan-badge">
+                      <PriceSpark />
+                      {plan.badge}
+                    </span>
+                  ) : null}
+                  <div className="price-plan-top">
+                    <span className="price-plan-mark" aria-hidden="true">
+                      <PlanIcon name={plan.icon} />
+                    </span>
+                    <strong className="price-plan-name">{plan.name}</strong>
+                    <PriceSpark className="price-plan-spark" />
+                  </div>
+                  <p className="price-plan-price">
+                    <span className="price-plan-amount">
+                      {formatUsd(amount, plan.amountPlus)}
+                    </span>
+                    <span className="price-plan-range">
+                      {formatUsd(rangeMin, false)} – {formatUsd(rangeMax, plan.rangePlus)}
+                    </span>
+                  </p>
+                  <p className="price-plan-desc">{plan.description}</p>
+                  <ul className="price-plan-features">
+                    {plan.features.map((feature) => (
+                      <li key={feature}>
+                        <span className="price-check">
+                          <PriceCheck />
+                        </span>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <MagButton>
+                    <Link
+                      className={`btn mag price-plan-cta${plan.featured ? " gold" : " ghost"}`}
+                      href={plan.ctaHref}
+                    >
+                      {plan.ctaLabel}
+                      <PriceSpark />
+                    </Link>
+                  </MagButton>
+                </Reveal>
+              );
+            })}
+          </ul>
         </div>
       </section>
 

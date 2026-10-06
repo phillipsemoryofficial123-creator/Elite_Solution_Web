@@ -4,8 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { BrandLogo } from "@/components/brand-logo";
-import { AuthControls } from "@/components/auth-controls";
-import { MagButton } from "@/components/interactions";
+import { GetStartedMenu } from "@/components/auth-controls";
 import { nav } from "@/data/site";
 
 export function SiteHeader() {
@@ -18,7 +17,6 @@ export function SiteHeader() {
 
   const links = nav.filter((item) => !item.cta);
   const cta = nav.find((item) => item.cta);
-  const ctaCurrent = cta && pathname.startsWith(cta.href) ? "page" : undefined;
 
   return (
     <header className="top" id="top">
@@ -32,6 +30,18 @@ export function SiteHeader() {
           aria-label="Main"
         >
           {links.map((item) => {
+            if (item.external) {
+              return (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {item.label}
+                </a>
+              );
+            }
             const current =
               item.href === "/"
                 ? pathname === "/"
@@ -47,25 +57,8 @@ export function SiteHeader() {
             );
           })}
           {cta ? (
-            <>
-              <div className="nav-auth-mobile">
-                <AuthControls />
-              </div>
-              <MagButton>
-                <Link
-                  href={cta.href}
-                  className="call mag nav-call-mobile"
-                  aria-current={ctaCurrent}
-                >
-                  {cta.label}
-                </Link>
-              </MagButton>
-            </>
-          ) : (
-            <div className="nav-auth-mobile">
-              <AuthControls />
-            </div>
-          )}
+            <GetStartedMenu label={cta.label} className="nav-call-mobile" />
+          ) : null}
         </nav>
         <div className="bar-end">
           <button
@@ -79,22 +72,9 @@ export function SiteHeader() {
           </button>
           {cta ? (
             <span className="nav-cta">
-              <AuthControls />
-              <MagButton>
-                <Link
-                  href={cta.href}
-                  className="call mag"
-                  aria-current={ctaCurrent}
-                >
-                  {cta.label}
-                </Link>
-              </MagButton>
+              <GetStartedMenu label={cta.label} />
             </span>
-          ) : (
-            <span className="nav-cta">
-              <AuthControls />
-            </span>
-          )}
+          ) : null}
         </div>
       </div>
     </header>
