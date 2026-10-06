@@ -49,7 +49,7 @@ export const portfolioStudioPage = {
       href: "/portfolio",
       details: {
         intro:
-          "Hussain Catering & Carry Out is a halal Hyderabadi restaurant and catering business in Lombard, Illinois, that sells carry-out meals, party trays, and live food stations through hussaincatering.com. I have managed the site's SEO since May 2025, covering technical SEO, on-page optimization, content, link building, and email campaign planning.",
+          "Hussain Catering & Carry Out is a halal Hyderabadi restaurant and catering business in Lombard, Illinois, that sells carry-out meals, party trays, and live food stations through hussaincatering.com. I provided web development and social media marketing for the restaurant, and I have managed the site's SEO since May 2025, covering technical SEO, on-page optimization, content, link building, and email campaign planning.",
         sections: [
           {
             heading: "The challenge",
@@ -60,6 +60,8 @@ export const portfolioStudioPage = {
           {
             heading: "What I did",
             items: [
+              { label: "Web development", text: "Built and maintained hussaincatering.com so the menu, catering, and ordering pages were ready for customers." },
+              { label: "Social media marketing", text: "Handled social media marketing for the restaurant to promote the menu, catering, and offers alongside the website." },
               { label: "Technical SEO", text: "Ran recurring Ahrefs site audits, documented page speed problems on key pages using PageSpeed Insights, fixed redirecting internal links, and tracked indexing in Google Search Console for category, product, and blog pages." },
               { label: "Toxic link cleanup", text: "Identified 149 spammy referring domains and prepared them for disavow." },
               { label: "On-page optimization", text: "Mapped focus and LSI keywords to the homepage, menu, and category pages. Built a product optimization tracker covering 250+ product URLs for meta titles, meta descriptions, alt text, Open Graph tags, and slugs, with a review and approval step." },
@@ -97,7 +99,7 @@ export const portfolioStudioPage = {
       href: "/portfolio",
       details: {
         intro:
-          "Burger Buz is a halal burger restaurant in Lincolnwood, Illinois, serving Skokie and north Chicago with burgers, fries, and bubble tea for online ordering at burgerbuz.com. I handled SEO from the website's launch in August 2025, covering keyword research, on-page optimization, content, link building, technical audits, and email campaign planning.",
+          "Burger Buz is a halal burger restaurant in Lincolnwood, Illinois, serving Skokie and north Chicago with burgers, fries, and bubble tea for online ordering at burgerbuz.com. I provided web development and social media marketing for the restaurant, and I handled SEO from the website's launch in August 2025, covering keyword research, on-page optimization, content, link building, technical audits, and email campaign planning.",
         sections: [
           {
             heading: "The challenge",
@@ -108,6 +110,8 @@ export const portfolioStudioPage = {
           {
             heading: "What I did",
             items: [
+              { label: "Web development", text: "Developed burgerbuz.com for launch so customers could browse the menu and order online." },
+              { label: "Social media marketing", text: "Handled social media marketing for the restaurant to promote the halal menu and local offers." },
               { label: "Launch setup", text: "Optimized all pages and product categories before launch, then connected the site to Google Search Console and Google Analytics." },
               { label: "Keyword research and competitor analysis", text: 'Benchmarked backlinks, traffic, and keyword footprints of 7 national burger chains, then mapped focus and LSI keywords to every page, targeting terms like "halal burger," "halal fast food," and "halal burger Skokie."' },
               { label: "Content strategy", text: "Built the content calendar and published 29 blog posts on halal certification, healthier fast food, gluten-free and low-carb options, and halal copycat recipes (smash burgers, fried chicken, McChicken-style burgers)." },
@@ -146,7 +150,7 @@ export const portfolioStudioPage = {
       href: "/portfolio",
       details: {
         intro:
-          "Deccan Delights USA is a Hyderabadi and South Asian restaurant in Naperville, Illinois, offering online ordering, daily specials, and catering across the Chicago suburbs through deccandelightsusa.com. I have run the site's SEO since April 2025, starting with a full audit and moving into technical fixes, on-page optimization, content, link building, and email campaign planning.",
+          "Deccan Delights USA is a Hyderabadi and South Asian restaurant in Naperville, Illinois, offering online ordering, daily specials, and catering across the Chicago suburbs through deccandelightsusa.com. I provided web development and social media marketing for the restaurant, and I have run the site's SEO since April 2025, starting with a full audit and moving into technical fixes, on-page optimization, content, link building, and email campaign planning.",
         sections: [
           {
             heading: "The challenge",
@@ -157,6 +161,8 @@ export const portfolioStudioPage = {
           {
             heading: "What I did",
             items: [
+              { label: "Web development", text: "Developed deccandelightsusa.com for online ordering, daily specials, and catering inquiries." },
+              { label: "Social media marketing", text: "Handled social media marketing for the Naperville restaurant to support the menu and catering offers." },
               { label: "SEO audit and roadmap", text: "Delivered a full technical, on-page, and off-page audit with a keyword gap analysis against 6 competitors and a 3-phase action plan." },
               { label: "Technical SEO", text: "Worked through crawl errors, redirects, sitemap issues, and page speed, and tracked indexing for 650+ URLs in Google Search Console." },
               { label: "On-page optimization", text: "Mapped focus and LSI keywords to key pages and optimized product pages with meta titles, meta descriptions, alt text, Open Graph tags, and clean slugs." },
@@ -196,7 +202,7 @@ export const portfolioStudioPage = {
       href: "/portfolio",
       details: {
         intro:
-          "Fusion Food SA is a halal Pakistani and Memon restaurant in San Antonio, Texas, known for biryani, karahi, nihari, weekday specials, and wedding and event catering. Its website, fusionfoodsa.com, drives menu views, orders, and catering inquiries. I have managed the site's SEO since June 2025, starting with an audit and continuing through technical fixes, on-page optimization, content, link building, and email campaign planning.",
+          "Fusion Food SA is a halal Pakistani and Memon restaurant in San Antonio, Texas, known for biryani, karahi, nihari, weekday specials, and wedding and event catering. Its website, fusionfoodsa.com, drives menu views, orders, and catering inquiries. I provided web development and social media marketing for the restaurant, and I have managed the site's SEO since June 2025, starting with an audit and continuing through technical fixes, on-page optimization, content, link building, and email campaign planning.",
         sections: [
           {
             heading: "The challenge",
@@ -207,6 +213,8 @@ export const portfolioStudioPage = {
           {
             heading: "What I did",
             items: [
+              { label: "Web development", text: "Developed fusionfoodsa.com so guests could view the menu, place orders, and send catering inquiries." },
+              { label: "Social media marketing", text: "Handled social media marketing for the San Antonio restaurant to promote dishes, specials, and catering." },
               { label: "SEO audit and competitor analysis", text: "Audited technical, on-page, and off-page SEO and benchmarked traffic, rankings, and backlinks against 5 local competitors." },
               { label: "Technical and on-page SEO", text: "Ran recurring Ahrefs audits to resolve crawl errors, meta description gaps, and alt text issues, and confirmed indexing of all published pages in Google Search Console." },
               { label: "Content strategy", text: "Built the content calendar and published 22 blog posts on Memon and Pakistani cuisine, biryani, wedding food, tandoori cooking, desserts, and Indian-American fusion dishes." },
@@ -244,7 +252,7 @@ export const portfolioStudioPage = {
       href: "/portfolio",
       details: {
         intro:
-          "Karachi Restaurant is a halal Pakistani restaurant in Milwaukee, Wisconsin, serving Karachi-style biryani, karahi, nihari, seafood, desserts, and catering trays through karachirestaurantwi.com. The business was formerly known as Anmol Restaurant, and I took on SEO in early 2026 to launch the new brand online without losing the loyal customers who still searched for the old name.",
+          "Karachi Restaurant is a halal Pakistani restaurant in Milwaukee, Wisconsin, serving Karachi-style biryani, karahi, nihari, seafood, desserts, and catering trays through karachirestaurantwi.com. The business was formerly known as Anmol Restaurant, and I provided web development and social media marketing for the restaurant, and I took on SEO in early 2026 to launch the new brand online without losing the loyal customers who still searched for the old name.",
         sections: [
           {
             heading: "The challenge",
@@ -255,6 +263,8 @@ export const portfolioStudioPage = {
           {
             heading: "What I did",
             items: [
+              { label: "Web development", text: "Developed karachirestaurantwi.com for the new brand so the menu, ordering, and catering pages replaced the old Anmol presence." },
+              { label: "Social media marketing", text: "Handled social media marketing for the Milwaukee restaurant to introduce the new name and promote the menu." },
               { label: "Keyword research", text: 'Built a research set of 115 keywords covering the new brand, the old Anmol name, local terms such as "halal restaurants milwaukee" and "pakistani restaurant milwaukee," and dish searches.' },
               { label: "Rebrand SEO", text: 'Positioned the site around both names ("formerly Anmol Restaurant") so the new brand could rank while customers searching the old name still found the restaurant.' },
               { label: "Technical and on-page SEO", text: "Ran recurring Ahrefs site audits and worked through slow pages, redirect issues, and meta tag gaps." },
@@ -292,7 +302,7 @@ export const portfolioStudioPage = {
       href: "/portfolio",
       details: {
         intro:
-          "Raja Bazaar is a zabiha halal meat and South Asian grocery store serving Milwaukee and Brookfield, Wisconsin, with an online product catalog at rajabazaarwi.com. I took on the store's SEO in early 2026 with two goals: make a large product catalog search-friendly, and build visibility beyond people who already knew the store by name.",
+          "Raja Bazaar is a zabiha halal meat and South Asian grocery store serving Milwaukee and Brookfield, Wisconsin, with an online product catalog at rajabazaarwi.com. I provided web development and social media marketing for the store, and I took on the store's SEO in early 2026 with two goals: make a large product catalog search-friendly, and build visibility beyond people who already knew the store by name.",
         sections: [
           {
             heading: "The challenge",
@@ -303,6 +313,8 @@ export const portfolioStudioPage = {
           {
             heading: "What I did",
             items: [
+              { label: "Web development", text: "Developed rajabazaarwi.com so the halal meat and grocery catalog could be browsed online." },
+              { label: "Social media marketing", text: "Handled social media marketing for the Milwaukee and Brookfield store to promote products and the catalog." },
               { label: "Product page optimization", text: "Rewrote meta titles and descriptions for 236 product pages across meat, seafood, spices, vegetables, and grocery items, and tracked product image updates by category." },
               { label: "Technical SEO", text: "Ran Ahrefs site audits and flagged 70 broken product URLs and sitemap errors for cleanup, along with missing H1 and alt text issues." },
               { label: "Link building", text: "Built 28 live backlinks (20 do-follow) through social profiles, social bookmarking, and Web 2.0s to give the new domain a base of local and brand citations." },
@@ -338,7 +350,7 @@ export const portfolioStudioPage = {
       href: "/portfolio",
       details: {
         intro:
-          "Butt Karahi is a halal Pakistani and Punjabi restaurant on Devon Avenue, Chicago's best-known South Asian food street, serving karahi, BBQ, tandoori, biryani, nihari, and haleem through an online ordering site at buttkarahidevon.com. I set up the restaurant's SEO and content strategy from the ground up in mid-2026.",
+          "Butt Karahi is a halal Pakistani and Punjabi restaurant on Devon Avenue, Chicago's best-known South Asian food street, serving karahi, BBQ, tandoori, biryani, nihari, and haleem through an online ordering site at buttkarahidevon.com. I provided web development and social media marketing for the restaurant, and I set up the restaurant's SEO and content strategy from the ground up in mid-2026.",
         sections: [
           {
             heading: "The challenge",
@@ -349,6 +361,8 @@ export const portfolioStudioPage = {
           {
             heading: "What I did",
             items: [
+              { label: "Web development", text: "Developed buttkarahidevon.com so guests could browse the menu and order online from Devon Avenue." },
+              { label: "Social media marketing", text: "Handled social media marketing for the Chicago restaurant to promote karahi, BBQ, and daily dishes." },
               { label: "Keyword mapping", text: 'Assigned focus and LSI keywords to 14 pages, including the homepage and every menu category (signature karahi, grilled, appetizers, rice, breakfast, desserts, and more), targeting terms such as "pakistani restaurant chicago," "karahi near me," and "chicken karahi near me."' },
               { label: "Technical SEO", text: "Troubleshot Yoast SEO on the WooCommerce shop page and ran Ahrefs site audits to keep the site at a 100 health score with 0 errors." },
               { label: "Google Business Profile", text: "Worked through menu issues on the restaurant's Google Business Profile to improve local search accuracy." },
@@ -381,7 +395,7 @@ export const portfolioStudioPage = {
       href: "/portfolio",
       details: {
         intro:
-          "Baithak of Punjab is a halal Pakistani and Punjabi restaurant in Milwaukee, Wisconsin, known for its buffet, BBQ, karahi, vegetarian dishes, and fresh Punjabi breads, with online ordering at dineatbaithak.com. I managed the site's SEO from October 2025 to April 2026, covering technical fixes, keyword mapping, content, link building, and early Generative Engine Optimization (GEO).",
+          "Baithak of Punjab is a halal Pakistani and Punjabi restaurant in Milwaukee, Wisconsin, known for its buffet, BBQ, karahi, vegetarian dishes, and fresh Punjabi breads, with online ordering at dineatbaithak.com. I provided web development and social media marketing for the restaurant, and I managed the site's SEO from October 2025 to April 2026, covering technical fixes, keyword mapping, content, link building, and early Generative Engine Optimization (GEO).",
         sections: [
           {
             heading: "The challenge",
@@ -392,6 +406,8 @@ export const portfolioStudioPage = {
           {
             heading: "What I did",
             items: [
+              { label: "Web development", text: "Developed dineatbaithak.com so guests could browse the menu and order online." },
+              { label: "Social media marketing", text: "Handled social media marketing for the Milwaukee restaurant to promote the buffet, BBQ, and vegetarian dishes." },
               { label: "Keyword mapping", text: 'Assigned focus and LSI keywords to the homepage and each menu category, covering brand variations ("baithak restaurant," "desi bethak menu"), local terms, and cuisine searches like "punjabi cuisine" and "punjabi vegetarian dishes."' },
               { label: "Technical SEO", text: "Ran recurring Ahrefs audits and worked through page speed and redirect issues, and got almost every page indexed on Google." },
               { label: "Content strategy", text: "Built the content calendar and published blog posts on the history of Punjabi cuisine, Punjabi vegetarian dishes, Punjabi breads and kulcha, Pakistani Punjabi feasts, and home recipes like palak paneer." },
@@ -481,7 +497,7 @@ export const portfolioStudioPage = {
       href: "/portfolio",
       details: {
         intro:
-          "CashingCarz Orlando is the Central Florida expansion of the CashingCarz junk car buying brand. It pays cash for old, damaged, wrecked, and non-running vehicles, with or without a title, and offers free towing and same-day pickup across Greater Orlando. I took on SEO for the brand-new domain, cashingcarzorlando.com, at launch in spring 2026 to build local search visibility from zero.",
+          "CashingCarz Orlando is the Central Florida expansion of the CashingCarz junk car buying brand. It pays cash for old, damaged, wrecked, and non-running vehicles, with or without a title, and offers free towing and same-day pickup across Greater Orlando. I provided web development and social media marketing for the Orlando brand, and I took on SEO for the brand-new domain, cashingcarzorlando.com, at launch in spring 2026 to build local search visibility from zero.",
         sections: [
           {
             heading: "The challenge",
@@ -492,6 +508,8 @@ export const portfolioStudioPage = {
           {
             heading: "What I did",
             items: [
+              { label: "Web development", text: "Developed cashingcarzorlando.com so sellers could request a cash offer and schedule free towing." },
+              { label: "Social media marketing", text: "Handled social media marketing for the Orlando brand to promote cash offers, free towing, and same-day pickup." },
               { label: "Local SEO architecture", text: 'Mapped focus keywords, meta titles, and meta descriptions for 26 city landing pages, covering Orlando, Kissimmee, Winter Park, Sanford, Lake Mary, Daytona Beach, Melbourne, Lakeland, and more. Each page targets a "junk car removal [city] FL" search.' },
               { label: "On-page optimization", text: "Wrote meta tags and focus keywords for the homepage and every core service page, including selling, donating, getting an offer, the referral program, testimonials, and the blog." },
               { label: "Content strategy", text: "Published 14 blog posts on seasonal and practical topics, such as selling a wrecked car, same-day vs. scheduled removal, avoiding scams, and car values for junk vehicles." },
@@ -577,11 +595,13 @@ export const portfolioStudioPage = {
       href: "/portfolio",
       details: {
         intro:
-          "Cleanout Junkers is a residential and commercial junk removal company serving the Dallas-Fort Worth area, offering home cleanouts, garage and backyard clearing, warehouse cleanouts, and junk car disposal through cleanoutjunkers.com. I took on SEO for the newly launched site in 2026 to build its search foundation from scratch.",
+          "Cleanout Junkers is a residential and commercial junk removal company serving the Dallas-Fort Worth area, offering home cleanouts, garage and backyard clearing, warehouse cleanouts, and junk car disposal through cleanoutjunkers.com. I provided web development and social media marketing for the company, and I took on SEO for the newly launched site in 2026 to build its search foundation from scratch.",
         sections: [
           {
             heading: "What I did",
             items: [
+              { label: "Web development", text: "Developed cleanoutjunkers.com so homeowners and businesses could request junk removal and cleanouts." },
+              { label: "Social media marketing", text: "Handled social media marketing for the Dallas-Fort Worth company to promote home, garage, and warehouse cleanouts." },
               { label: "On-page setup", text: 'Wrote focus keywords, meta titles, and meta descriptions for the core pages, positioning the homepage around "junk removal services" in DFW.' },
               { label: "Technical SEO", text: "Set up Ahrefs site monitoring and kept the site at a 100 health score with 0 errors during launch." },
               { label: "Off-page foundation", text: "Built the site's first do-follow backlinks through social bookmarking and Web 2.0 properties, and planned a guest post targeting junk car disposal." },
@@ -604,7 +624,7 @@ export const portfolioStudioPage = {
       href: "/portfolio",
       details: {
         intro:
-          "Red Photo Booths is a Dallas-Fort Worth event entertainment company in business since 2014, offering 360 video booths, GlamBot, mirror booths, green screen, roaming photography, and branded corporate activations. I took over SEO in July 2026 at a critical point: the site was losing rankings and the business was repositioning from consumer photo booth rentals toward corporate events and brand activations.",
+          "Red Photo Booths is a Dallas-Fort Worth event entertainment company in business since 2014, offering 360 video booths, GlamBot, mirror booths, green screen, roaming photography, and branded corporate activations. I provided web development and social media marketing for the company, and I took over SEO in July 2026 at a critical point: the site was losing rankings and the business was repositioning from consumer photo booth rentals toward corporate events and brand activations.",
         sections: [
           {
             heading: "The challenge",
@@ -615,6 +635,8 @@ export const portfolioStudioPage = {
           {
             heading: "What I did",
             items: [
+              { label: "Web development", text: "Developed the company website so clients could review booth packages and request corporate activations." },
+              { label: "Social media marketing", text: "Handled social media marketing for the Dallas-Fort Worth brand to promote 360 booths, GlamBot, and corporate events." },
               { label: "SEO audit and diagnosis", text: "Delivered a full audit and a plain-language summary for a client meeting. It connected the ranking drop to the spam link spike and flagged quick on-page fixes that needed no new content." },
               { label: "Competitor and backlink gap analysis", text: "Benchmarked backlinks, authority, and keyword overlap against 5 direct competitors (Majestic Photobooth, Proparazzi, Little Camper, Luxebooth, Social Pro). From that I built a list of guest post and PR opportunities based on links that work for competitors." },
               { label: "6-month growth strategy", text: "Built a 3-phase plan. Phase 1 stops the decline, disavows the spam network, and fixes the technical foundation. Phase 2 deepens underbuilt service pages and starts a disciplined link program. Phase 3 rolls out DFW suburb location pages." },
@@ -648,7 +670,7 @@ export const portfolioStudioPage = {
       href: "/portfolio",
       details: {
         intro:
-          "Fragrance Bodega is a US Shopify store specializing in Middle Eastern and designer-inspired fragrances from brands like Rasasi, Armaf, Lattafa, French Avenue, Rayhaan, and Jo Milano. I have handled the store's SEO and email strategy since May 2026, covering technical fixes, product and collection optimization, content, link building, and data-driven email marketing.",
+          "Fragrance Bodega is a US Shopify store specializing in Middle Eastern and designer-inspired fragrances from brands like Rasasi, Armaf, Lattafa, French Avenue, Rayhaan, and Jo Milano. I provided web development and social media marketing for the store, and I have handled the store's SEO and email strategy since May 2026, covering technical fixes, product and collection optimization, content, link building, and data-driven email marketing.",
         sections: [
           {
             heading: "The challenge",
@@ -659,6 +681,8 @@ export const portfolioStudioPage = {
           {
             heading: "What I did",
             items: [
+              { label: "Web development", text: "Developed the Shopify store so shoppers could browse brands and buy fragrances online." },
+              { label: "Social media marketing", text: "Handled social media marketing for the store to promote new arrivals, brand lines, and offers." },
               { label: "Technical SEO and audit", text: "Delivered a full audit covering indexing, broken links, and crawl errors, and prioritized fixes for broken collection URLs and non-indexed pages." },
               { label: "Product and collection optimization", text: "Optimized product and collection pages around brand and product searches (Game of Spades, Hawas, Rayhaan Pacific Aura, Zimaya). Rankings improved within 19 days of the first round of changes." },
               { label: "Sales and demand analysis", text: "Built a best-sellers report from Shopify orders and matched it with Search Console data to find hero products, such as the Rasasi Hawas line, and high-impression, low-click opportunities." },
@@ -694,7 +718,7 @@ export const portfolioStudioPage = {
       href: "/portfolio",
       details: {
         intro:
-          "Dhuka Insurance is an independent property and casualty insurance agency based in Austin, Texas, founded in 2015. It shops multiple carriers to find coverage for auto, home, life, health, and small-business clients. I led SEO for the agency's new website, dhukainsurancetx.com, from launch in early 2026, with a focus on the client's top priorities: commercial and personal auto insurance.",
+          "Dhuka Insurance is an independent property and casualty insurance agency based in Austin, Texas, founded in 2015. It shops multiple carriers to find coverage for auto, home, life, health, and small-business clients. I provided web development and social media marketing for the agency, and I led SEO for the agency's new website, dhukainsurancetx.com, from launch in early 2026, with a focus on the client's top priorities: commercial and personal auto insurance.",
         sections: [
           {
             heading: "The challenge",
@@ -705,6 +729,8 @@ export const portfolioStudioPage = {
           {
             heading: "What I did",
             items: [
+              { label: "Web development", text: "Developed dhukainsurancetx.com so clients could review coverage lines and start a quote." },
+              { label: "Social media marketing", text: "Handled social media marketing for the Austin agency to explain auto, home, and business coverage." },
               { label: "Client onboarding", text: "Ran a business and services questionnaire to define the agency's positioning, service priorities, and ideal customers (families, individuals, and small businesses), and built the SEO plan around it." },
               { label: "Niche-first site architecture", text: "Wrote focus keywords, meta titles, and meta descriptions for 44 pages. These covered personal lines (auto, home, life), 19 small-business niche pages (coffee shops, food trucks, restaurants, contractors, roofers, plumbers, landscaping, salons, cleaning, senior care, and more), 4 city pages (Austin, Dallas, Houston, San Antonio), and blog categories." },
               { label: "Lead-generation tools", text: "Optimized 4 insurance calculator pages (auto, home, life, business) as search-friendly quote and lead magnets." },
@@ -738,7 +764,7 @@ export const portfolioStudioPage = {
       href: "/portfolio",
       details: {
         intro:
-          "The Taleem Foundation is a nonprofit working to expand education access in Pakistan, with a focus on girls' education, skills development, vocational training, and community empowerment. Its website, thetaleemfoundation.com, is built to reach donors and volunteers, especially in the US. I have led the foundation's SEO since April 2025, starting with a full audit and building a long-term content and authority program.",
+          "The Taleem Foundation is a nonprofit working to expand education access in Pakistan, with a focus on girls' education, skills development, vocational training, and community empowerment. Its website, thetaleemfoundation.com, is built to reach donors and volunteers, especially in the US. I provided web development and social media marketing for the foundation, and I have led the foundation's SEO since April 2025, starting with a full audit and building a long-term content and authority program.",
         sections: [
           {
             heading: "The challenge",
@@ -749,6 +775,8 @@ export const portfolioStudioPage = {
           {
             heading: "What I did",
             items: [
+              { label: "Web development", text: "Developed thetaleemfoundation.com so donors and volunteers, especially in the US, could learn about the mission and get involved." },
+              { label: "Social media marketing", text: "Handled social media marketing for the foundation to share education stories and reach supporters." },
               { label: "SEO audit and roadmap", text: "Delivered a full technical, on-page, and off-page audit with keyword density analysis by page, a competitor keyword gap analysis, and a 3-phase action plan: fix and disavow, optimize keywords and launch content, then outreach and PR." },
               { label: "Content strategy for a US donor audience", text: "Built a 135-topic content calendar and published 87 blog posts. Topics included the state of education in Pakistan, girls' education, the urban-rural divide, curriculum and policy reform, EdTech and digital learning, and student success stories. Many posts were framed for Western readers, such as \"Why Educating Pakistani Girls Should Matter to the West\" and \"How Pakistani-American Charities Are Building Schools Back Home.\" Publishing grew the site from 457 to 1,100+ crawlable pages." },
               { label: "Link building", text: "Built 286 live backlinks (246 do-follow) through Web 2.0s, blog commenting, social profiles, directories, business listings, and social bookmarking, plus a guest post on Youth Ki Awaaz (DA 66)." },
