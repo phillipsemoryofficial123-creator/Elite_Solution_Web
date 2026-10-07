@@ -1310,7 +1310,7 @@ a.contact-channel:hover{transform:translateY(-6px);border-color:rgba(127,161,230
 .careers-job.closed{opacity:.92}
 .careers-jobs-empty{padding:36px 22px;border-radius:16px;border:1px dashed rgba(127,161,230,.28);text-align:center;color:var(--studio-soft)}
 .careers-jobs-empty h3{margin:0 0 8px;color:var(--studio-heading)}
-.careers-why{padding-top:72px;padding-bottom:88px}
+.careers-why{padding-top:72px;padding-bottom:112px}
 .careers-why-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:36px;align-items:center}
 .careers-why-copy .careers-title{max-width:16ch}
 .careers-why-cards{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
@@ -1320,15 +1320,6 @@ a.contact-channel:hover{transform:translateY(-6px);border-color:rgba(127,161,230
 .careers-why-ic svg{width:18px;height:18px}
 .careers-why-card strong{font-size:15px;font-weight:800;color:var(--studio-heading)}
 .careers-why-card p{margin:0;font-size:13px;line-height:1.5;color:var(--studio-soft)}
-.careers-cta{padding-top:56px;padding-bottom:112px}
-.careers-cta-panel{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:36px;align-items:center;padding:40px;border-radius:22px;border:1px solid rgba(127,161,230,.24);background:
-  radial-gradient(ellipse 60% 80% at 90% 20%,rgba(127,161,230,.2),transparent 55%),
-  radial-gradient(ellipse 50% 70% at 10% 80%,rgba(201,162,39,.12),transparent 50%),
-  linear-gradient(135deg,var(--card) 0%,var(--page-soft) 100%);
-  overflow:hidden}
-.careers-cta-frame{position:relative;aspect-ratio:16/11;border-radius:18px;overflow:hidden;border:1px solid rgba(127,161,230,.22);background:var(--studio-bg)}
-.careers-cta-img{object-fit:cover}
-
 @media (prefers-reduced-motion:reduce){
   .careers-job,.careers-why-card,.careers-hero-bg-img,.careers-cat{transition:none!important;transform:none!important}
 }
@@ -1773,7 +1764,7 @@ footer a{text-decoration:none}
   .price-nonfin-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .price-faq-grid{grid-template-columns:1fr;gap:20px}
   .careers-hero{padding:var(--hero-pad-top) 0 72px;min-height:auto}
-  .careers-openings-grid,.careers-why-grid,.careers-cta-panel{grid-template-columns:1fr;gap:22px}
+  .careers-openings-grid,.careers-why-grid{grid-template-columns:1fr;gap:22px}
   .careers-why-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
   .careers-job{flex-wrap:wrap}
   .careers-job-cta{width:100%;justify-content:center;text-align:center}

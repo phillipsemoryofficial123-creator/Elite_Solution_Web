@@ -102,13 +102,6 @@ export const careersPage = {
       },
     ],
   },
-  cta: {
-    title: "Ready to Make an Impact?",
-    lead: "Explore roles below or get in touch — we'd love to meet people who care about quality and growth.",
-    primaryLabel: "View Jobs",
-    primaryHref: "#openings",
-    image: "/images/careers-cta-desk.jpg",
-  },
 } as const;
 
 export type CareersValueIcon =

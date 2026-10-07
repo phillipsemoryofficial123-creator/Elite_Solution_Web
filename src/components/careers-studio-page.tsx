@@ -110,7 +110,7 @@ function PinIcon() {
 }
 
 export function CareersStudioPage() {
-  const { hero, openings, why, cta } = careersPage;
+  const { hero, openings, why } = careersPage;
   const [cat, setCat] = useState<CareersCategoryId>("all");
 
   const counts = useMemo(() => {
@@ -308,38 +308,6 @@ export function CareersStudioPage() {
               </Reveal>
             ))}
           </ul>
-        </div>
-      </section>
-
-      <section className="sec careers-cta">
-        <div className="w careers-cta-panel">
-          <div className="careers-cta-copy">
-            <Reveal>
-              <h2 className="careers-title">{cta.title}</h2>
-            </Reveal>
-            <Reveal as="p" className="careers-lead" delay="60ms">
-              {cta.lead}
-            </Reveal>
-            <Reveal className="careers-actions" delay="120ms">
-              <MagButton>
-                <Link className="btn gold mag" href={cta.primaryHref}>
-                  {cta.primaryLabel}
-                  <span aria-hidden="true"> →</span>
-                </Link>
-              </MagButton>
-            </Reveal>
-          </div>
-          <Reveal className="careers-cta-media" delay="100ms">
-            <div className="careers-cta-frame">
-              <Image
-                src={cta.image}
-                alt=""
-                fill
-                sizes="(max-width:900px) 100vw, 42vw"
-                className="careers-cta-img"
-              />
-            </div>
-          </Reveal>
         </div>
       </section>
     </div>
