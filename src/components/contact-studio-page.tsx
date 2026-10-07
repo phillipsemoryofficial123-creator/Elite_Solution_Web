@@ -253,6 +253,10 @@ function ContactFormPanel() {
   const [captchaCode, setCaptchaCode] = useState("");
   const [captchaInput, setCaptchaInput] = useState("");
   const [tried, setTried] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [status, setStatus] = useState<{ tone: "ok" | "bad"; text: string } | null>(
+    null,
+  );
   const errors = tried
     ? contactFieldErrors({
         name,
@@ -272,8 +276,9 @@ function ContactFormPanel() {
     setCaptchaInput("");
   }
 
-  function onSubmit(e: FormEvent) {
+  async function onSubmit(e: FormEvent) {
     e.preventDefault();
+    if (sending) return;
     const next = contactFieldErrors({
       name,
       email,
@@ -282,6 +287,7 @@ function ContactFormPanel() {
       captchaCode,
     });
     setTried(true);
+    setStatus(null);
     const first = (Object.keys(next) as ContactField[])[0];
     if (first) {
       const fieldId =
@@ -295,10 +301,45 @@ function ContactFormPanel() {
       document.getElementById(fieldId)?.focus();
       return;
     }
-    const body = `Name: ${name.trim()}\nEmail: ${email.trim()}\nService: ${service}\n\n${message.trim()}`;
-    window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(
-      `Consultation request: ${service}`,
-    )}&body=${encodeURIComponent(body)}`;
+
+    setSending(true);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: name.trim(),
+          email: email.trim(),
+          service,
+          message: message.trim(),
+        }),
+      });
+      const data = (await response.json().catch(() => null)) as { error?: string } | null;
+      if (!response.ok) {
+        setStatus({
+          tone: "bad",
+          text: data?.error || "Could not send your message. Try again.",
+        });
+        setTried(false);
+        setCaptchaInput("");
+        setCaptchaCode(createCaptchaCode());
+        return;
+      }
+      setName("");
+      setEmail("");
+      setMessage("");
+      setCaptchaInput("");
+      setTried(false);
+      setCaptchaCode(createCaptchaCode());
+      setStatus({ tone: "ok", text: "Message sent. We will reply soon." });
+    } catch {
+      setStatus({
+        tone: "bad",
+        text: "Could not send your message. Check your connection and try again.",
+      });
+    } finally {
+      setSending(false);
+    }
   }
 
   return (
@@ -383,10 +424,15 @@ function ContactFormPanel() {
           </p>
         ) : null}
       </div>
+      {status ? (
+        <p className={`contact-fm-status ${status.tone}`} role="status">
+          {status.text}
+        </p>
+      ) : null}
       <div className="contact-fm-actions">
         <MagButton>
-          <button className="btn gold mag" type="submit">
-            {form.submitLabel}
+          <button className="btn gold mag" type="submit" disabled={sending}>
+            {sending ? "Sending…" : form.submitLabel}
           </button>
         </MagButton>
       </div>

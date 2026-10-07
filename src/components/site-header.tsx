@@ -10,16 +10,33 @@ import { nav } from "@/data/site";
 export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [shown, setShown] = useState(false);
 
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
 
+  useEffect(() => {
+    let frame = 0;
+    const onScroll = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        setShown(window.scrollY > 48);
+      });
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
+
   const links = nav.filter((item) => !item.cta);
   const cta = nav.find((item) => item.cta);
 
   return (
-    <header className="top" id="top">
+    <header className={`top${shown || open ? " on" : ""}`} id="top">
       <div className="bar">
         <Link className="brand" href="/" aria-label="Elite Solution home">
           <BrandLogo priority />

@@ -90,7 +90,8 @@ h1,h2,h3{font-family:var(--head);line-height:1.12;margin:0}
 .prog{position:fixed;left:0;top:0;height:3px;width:100%;z-index:80;background:linear-gradient(90deg,var(--gold),var(--gold2),var(--sky));transform:scaleX(0);transform-origin:0 50%}
 
 /* header — always white bar on dark site */
-.top{position:fixed;left:50%;top:calc(10px + env(safe-area-inset-top,0px));transform:translateX(-50%);width:min(1180px,calc(100% - 32px));z-index:70;color:#1A274F;border-radius:999px;padding:3px;isolation:isolate;background:linear-gradient(90deg,var(--sky),var(--gold2),var(--blue),var(--gold));box-shadow:0 8px 28px rgba(20,32,80,.1);transition:box-shadow .3s}
+.top{position:fixed;left:50%;top:calc(10px + env(safe-area-inset-top,0px));transform:translate(-50%,48px);width:min(1180px,calc(100% - 32px));z-index:70;color:#1A274F;border-radius:999px;padding:3px;isolation:isolate;background:linear-gradient(90deg,var(--sky),var(--gold2),var(--blue),var(--gold));box-shadow:0 8px 28px rgba(20,32,80,.1);opacity:0;visibility:hidden;pointer-events:none;transition:transform .5s cubic-bezier(.2,.7,.2,1),opacity .45s ease,box-shadow .3s,visibility 0s linear .5s}
+.top.on{transform:translate(-50%,0);opacity:1;visibility:visible;pointer-events:auto;transition:transform .5s cubic-bezier(.2,.7,.2,1),opacity .45s ease,box-shadow .3s,visibility 0s}
 .top::after{content:"";position:absolute;left:8%;right:8%;bottom:-10px;height:22px;border-radius:999px;z-index:0;pointer-events:none;background:linear-gradient(90deg,var(--sky),var(--gold2),var(--blue),var(--gold),var(--sky));background-size:200% 100%;filter:blur(14px);opacity:.5;animation:navShadowFlow 8s linear infinite}
 .top::before{content:"";position:absolute;inset:3px;border-radius:inherit;background:#fff;z-index:1;pointer-events:none}
 .top.scrolled{box-shadow:0 10px 32px rgba(20,32,80,.12)}
@@ -1202,6 +1203,10 @@ a.contact-channel:hover{transform:translateY(-6px);border-color:rgba(127,161,230
   border-color:rgba(255,154,154,.85);box-shadow:0 0 0 4px rgba(255,120,120,.16);
 }
 .contact-fm-error{margin:8px 0 0;font-size:13px;font-weight:600;line-height:1.4;color:#ffb4b4}
+.contact-fm-status{margin:0 0 12px;font-size:14px;font-weight:600;line-height:1.45;text-align:center}
+.contact-fm-status.ok{color:#d7e7c8}
+.contact-fm-status.bad{color:#ffb4b4}
+.contact-fm-actions .btn:disabled{opacity:.7;cursor:wait}
 .contact-fm-captcha{display:flex;align-items:center;gap:12px;margin-bottom:10px}
 .contact-fm-captcha canvas{display:block;border-radius:12px;border:1px solid var(--studio-border)}
 .contact-fm-captcha-refresh{appearance:none;border:1px solid rgba(127,161,230,.45);background:transparent;color:var(--sky);font:inherit;font-size:13px;font-weight:700;border-radius:999px;padding:8px 14px;cursor:pointer}

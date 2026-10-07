@@ -23,7 +23,7 @@ export const contactPage = {
     eyebrow: "Consultation",
     titleBefore: "Send a",
     titleAccent: "message",
-    lead: "Share a few details and we will open your email app with everything filled in — ready to send.",
+    lead: "Share a few details and we will reply with a clear plan, timeline, and quote.",
     submitLabel: "Send message",
   },
 } as const;
