@@ -9,7 +9,7 @@ import { homePage } from "@/data/home-page";
 import { servicesHeroWords } from "@/data/site";
 
 export function HomeStudioPage() {
-  const { hero, services, about, portfolio, pricing, process, cta } = homePage;
+  const { hero, services, about, portfolio, pricing, process } = homePage;
 
   return (
     <div className="home-studio">
@@ -224,49 +224,6 @@ export function HomeStudioPage() {
               </Reveal>
             ))}
           </ul>
-        </div>
-      </section>
-
-      <section className="sec home-cta">
-        <div className="w">
-          <div className="home-cta-panel">
-            <div className="home-cta-copy">
-              <Reveal as="p" className="home-eyebrow">
-                {cta.eyebrow}
-              </Reveal>
-              <Reveal>
-                <h2 className="home-title">
-                  {cta.titleBefore}{" "}
-                  <span className="home-accent">{cta.titleAccent}</span>
-                </h2>
-              </Reveal>
-              <Reveal as="p" className="home-lead" delay="80ms">
-                {cta.lead}
-              </Reveal>
-              <Reveal className="home-actions" delay="140ms">
-                <MagButton>
-                  <Link className="btn gold mag" href={cta.primaryHref}>
-                    {cta.primaryLabel}
-                    <span aria-hidden="true"> →</span>
-                  </Link>
-                </MagButton>
-                <MagButton>
-                  <a className="btn ghost mag home-cta-ghost" href={cta.secondaryHref}>
-                    {cta.secondaryLabel}
-                  </a>
-                </MagButton>
-              </Reveal>
-            </div>
-            <Reveal className="home-cta-frame" delay="100ms">
-              <Image
-                src={cta.image}
-                alt=""
-                fill
-                sizes="(max-width:900px) 100vw, 40vw"
-                className="home-cta-img"
-              />
-            </Reveal>
-          </div>
         </div>
       </section>
     </div>

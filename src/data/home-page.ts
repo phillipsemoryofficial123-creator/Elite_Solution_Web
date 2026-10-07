@@ -2,7 +2,6 @@ import { portfolioStudioPage } from "@/data/portfolio-page";
 import { pricingPage } from "@/data/pricing-page";
 import { aboutPage } from "@/data/about-page";
 import { financialServices, nonFinancialServices } from "@/data/services";
-import { site } from "@/data/site";
 
 const featuredIds = ["hussain-catering", "burger-buz", "butt-karahi"];
 const featuredPortfolio = featuredIds.map((id) =>
@@ -121,16 +120,5 @@ export const homePage = {
         body: "Work gets done, and we stay available for changes and questions.",
       },
     ],
-  },
-  cta: {
-    eyebrow: "Ready when you are",
-    titleBefore: "Let's grow your",
-    titleAccent: "business together",
-    lead: "Book a free consultation. Tell us what you need — we reply with a clear plan, timeline, and quote.",
-    primaryLabel: "Get Started",
-    primaryHref: "/contact",
-    secondaryLabel: "Call now",
-    secondaryHref: site.phoneHref,
-    image: "/images/about-cta-laptop.jpg",
   },
 } as const;
