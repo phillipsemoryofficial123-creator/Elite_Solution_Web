@@ -40,7 +40,8 @@ function SocialIcon({ id }: { id: SocialId }) {
 }
 
 export function SiteFooter() {
-  const year = new Date().getFullYear();
+  const pakistan = site.offices.find((office) => office.id === "pakistan");
+  const otherOffices = site.offices.filter((office) => office.id !== "pakistan");
 
   return (
     <footer>
@@ -107,34 +108,37 @@ export function SiteFooter() {
             </div>
           </div>
 
-          <div className="ft-col">
+          <div className="ft-side">
             <h3>Contact</h3>
             <ul className="ft-contact">
-              <li>
-                <span>Phone</span>
-                <a href={site.phoneHref}>{site.phone}</a>
-              </li>
-              <li>
-                <span>Email</span>
-                <a href={`mailto:${site.email}`}>{site.email}</a>
-              </li>
-              {site.offices.map((office) => (
-                <li key={office.id}>
-                  <span>{office.label}</span>
-                  <a href={`mailto:${office.email}`}>{office.email}</a>
-                  <p>{office.address}</p>
-                  <a href={office.phoneHref}>{office.phone}</a>
+                <li>
+                  <span>Phone</span>
+                  <a href={site.phoneHref}>{site.phone}</a>
                 </li>
-              ))}
-            </ul>
+                <li>
+                  <span>Email</span>
+                  <a href={`mailto:${site.email}`}>{site.email}</a>
+                </li>
+                {otherOffices.map((office) => (
+                  <li key={office.id}>
+                    <span>{office.label}</span>
+                    <p>{office.address}</p>
+                    <a href={`mailto:${office.email}`}>{office.email}</a>
+                    <a href={office.phoneHref}>{office.phone}</a>
+                  </li>
+                ))}
+              </ul>
+            {pakistan ? (
+              <ul className="ft-contact ft-pk">
+                <li>
+                  <span>{pakistan.label}</span>
+                  <p>{pakistan.address}</p>
+                  <a href={`mailto:${pakistan.email}`}>{pakistan.email}</a>
+                  <a href={pakistan.phoneHref}>{pakistan.phone}</a>
+                </li>
+              </ul>
+            ) : null}
           </div>
-        </div>
-
-        <div className="ft-bottom">
-          <p>
-            © {year} {site.name}. All rights reserved.
-          </p>
-          <p className="ft-bottom-note">Finance · Technology · Digital growth</p>
         </div>
       </div>
     </footer>
