@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import { MagButton } from "@/components/interactions";
 import { Reveal } from "@/components/reveal";
 import { ServiceFeatureGrid } from "@/components/service-feature-grid";
 import { ServiceProcess } from "@/components/service-process";
@@ -64,6 +66,16 @@ export function ServiceStack({ detail }: { detail: ServiceDetailContent }) {
                 {section.paragraphs.map((p) => (
                   <p key={p.slice(0, 40)}>{p}</p>
                 ))}
+                {section.image ? (
+                  <div className="svc-pro-intro-cta">
+                    <MagButton>
+                      <Link className="btn gold mag" href="/contact">
+                        Get Started
+                        <span aria-hidden="true"> →</span>
+                      </Link>
+                    </MagButton>
+                  </div>
+                ) : null}
                 {hasSteps ? <ServiceSteps steps={section.steps!} /> : null}
                 {hasFeatures ? (
                   <ServiceFeatureGrid features={section.features!} />
