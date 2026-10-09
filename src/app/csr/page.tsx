@@ -4,7 +4,7 @@ import { CsrStudioPage } from "@/components/csr-studio-page";
 export const metadata: Metadata = {
   title: "CSR",
   description:
-    "Free Elite Solutions USA tools — build a resume or use the SEO suite.",
+    "Free Elite Solutions tools to build a professional resume and improve your website's search visibility.",
 };
 
 export default function CsrPage() {
