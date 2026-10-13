@@ -9,7 +9,7 @@ export const pricingPage = {
       { icon: "plans", label: "Tailored Solutions" },
       { icon: "support", label: "Dedicated Support" },
     ],
-    image: "/images/pricing-hero-devices.jpg",
+    image: "/images/hero-bg-pricing-plans.jpg",
   },
   discovery: {
     eyebrow: "Get Started",

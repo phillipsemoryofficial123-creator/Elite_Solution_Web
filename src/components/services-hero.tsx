@@ -10,7 +10,7 @@ export function ServicesHero() {
     <SpotSurface className="dk phero services-hero">
       <div className="services-hero-bg" aria-hidden="true">
         <Image
-          src="/images/services-hero-agency.jpg"
+          src="/images/hero-bg-services.jpg"
           alt=""
           fill
           priority

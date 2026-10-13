@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { heroWords } from "@/data/site";
+import { heroDisplayFont } from "@/fonts/hero";
 
 export function Typewriter({
   words = heroWords,
@@ -51,7 +52,7 @@ export function Typewriter({
   }, [list, reduced]);
 
   return (
-    <span className="rotline">
+    <span className={`rotline ${heroDisplayFont.className}`}>
       <span className="grad" ref={ref}>
         {list[0]}
       </span>

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
-import { Black_Ops_One, Bricolage_Grotesque, Figtree } from "next/font/google";
+import { bodyFont, headFont, heroDisplayFont } from "@/fonts";
 import { ServiceNewsletter } from "@/components/service-newsletter";
 import { SiteFooter } from "@/components/site-footer";
 import EclipseSplash from "@/components/eclipse-splash";
@@ -8,24 +8,6 @@ import { ScrollProgress } from "@/components/scroll-progress";
 import { SiteHeader } from "@/components/site-header";
 import { site } from "@/data/site";
 import "./globals.css";
-
-const head = Bricolage_Grotesque({
-  variable: "--font-head",
-  subsets: ["latin"],
-  weight: ["500", "700", "800"],
-});
-
-const body = Figtree({
-  variable: "--font-body",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-});
-
-const heroDisplay = Black_Ops_One({
-  variable: "--font-hero",
-  subsets: ["latin"],
-  weight: "400",
-});
 
 export const metadata: Metadata = {
   title: {
@@ -51,7 +33,7 @@ export default function RootLayout({
       <html
         lang="en"
         data-theme="dark"
-        className={`${head.variable} ${body.variable} ${heroDisplay.variable} h-full`}
+        className={`${headFont.variable} ${bodyFont.variable} ${heroDisplayFont.variable} h-full`}
       >
         <body className="min-h-full flex flex-col">
           <EclipseSplash />

@@ -1,16 +1,9 @@
-import { SignIn } from "@clerk/nextjs";
+import { SignInPanel } from "@/components/sign-in-panel";
 
 export default function SignInPage() {
   return (
     <div className="auth-page">
-      <SignIn
-        appearance={{
-          elements: {
-            rootBox: "auth-box",
-            card: "auth-card",
-          },
-        }}
-      />
+      <SignInPanel />
     </div>
   );
 }

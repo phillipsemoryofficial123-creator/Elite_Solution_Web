@@ -5,7 +5,7 @@ export const aboutPage = {
     lead: "We provide expert financial and business solutions to help you achieve lasting success and growth.",
     ctaLabel: "Get in Touch",
     ctaHref: "/contact",
-    image: "/images/about-hero-office.jpg",
+    image: "/images/hero-bg-about.jpg",
   },
   story: {
     eyebrow: "About Us",

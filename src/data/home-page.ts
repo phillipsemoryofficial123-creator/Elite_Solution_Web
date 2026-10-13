@@ -17,7 +17,7 @@ export const homePage = {
     primaryHref: "/contact",
     secondaryLabel: "Explore Services",
     secondaryHref: "/services",
-    image: "/images/home-hero-consultation.jpg",
+    image: "/images/hero-bg-home.jpg",
   },
   services: {
     eyebrow: "What We Do",

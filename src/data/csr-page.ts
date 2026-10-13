@@ -4,7 +4,7 @@ export const csrPage = {
     titleBefore: "Free tools for",
     titleAccent: "your next step",
     lead: "Build a resume or check your search presence with tools from Elite Solutions USA. Each one opens on its own site.",
-    image: "/images/seo-hero-premium.jpg",
+    image: "/images/hero-bg-csr-tools.jpg",
   },
   tools: [
     {

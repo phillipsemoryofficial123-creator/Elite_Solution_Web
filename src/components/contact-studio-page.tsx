@@ -148,29 +148,19 @@ function ServiceDropdown({
   );
 }
 
-type ContactField = "name" | "email" | "message" | "captcha";
+type ContactField = "name" | "email" | "message";
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const captchaChars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
-
-function createCaptchaCode() {
-  const bytes = new Uint32Array(5);
-  crypto.getRandomValues(bytes);
-  return Array.from(bytes, (n) => captchaChars[n % captchaChars.length]).join("");
-}
 
 function contactFieldErrors(values: {
   name: string;
   email: string;
   message: string;
-  captcha: string;
-  captchaCode: string;
 }): Partial<Record<ContactField, string>> {
   const errors: Partial<Record<ContactField, string>> = {};
   const name = values.name.trim();
   const email = values.email.trim();
   const message = values.message.trim();
-  const captcha = values.captcha.trim().toUpperCase();
 
   if (!name) errors.name = "Enter your name.";
   else if (name.length < 2) errors.name = "Enter your full name.";
@@ -181,67 +171,7 @@ function contactFieldErrors(values: {
   if (!message) errors.message = "Enter a message.";
   else if (message.length < 10) errors.message = "Write at least 10 characters.";
 
-  if (!captcha) errors.captcha = "Complete the captcha.";
-  else if (captcha !== values.captchaCode) errors.captcha = "Those characters don't match. Try again.";
-
   return errors;
-}
-
-function ContactCaptcha({
-  code,
-  onRefresh,
-}: {
-  code: string;
-  onRefresh: () => void;
-}) {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    const ctx = canvas?.getContext("2d");
-    if (!canvas || !ctx || !code) return;
-    const width = canvas.width;
-    const height = canvas.height;
-    ctx.clearRect(0, 0, width, height);
-    ctx.fillStyle = "#0c1330";
-    ctx.fillRect(0, 0, width, height);
-
-    for (let i = 0; i < 7; i++) {
-      ctx.strokeStyle = i % 2 === 0 ? "rgba(201,162,39,.45)" : "rgba(127,161,230,.4)";
-      ctx.lineWidth = 1;
-      ctx.beginPath();
-      ctx.moveTo(Math.random() * width, Math.random() * height);
-      ctx.lineTo(Math.random() * width, Math.random() * height);
-      ctx.stroke();
-    }
-
-    ctx.textBaseline = "middle";
-    ctx.font = "700 28px Georgia, serif";
-    code.split("").forEach((char, i) => {
-      const x = 18 + i * 30;
-      const y = height / 2 + (Math.random() * 8 - 4);
-      ctx.save();
-      ctx.translate(x, y);
-      ctx.rotate((Math.random() - 0.5) * 0.45);
-      ctx.fillStyle = i % 2 === 0 ? "#F3D77A" : "#E7EAF3";
-      ctx.fillText(char, 0, 0);
-      ctx.restore();
-    });
-
-    for (let i = 0; i < 28; i++) {
-      ctx.fillStyle = "rgba(231,234,243,.35)";
-      ctx.fillRect(Math.random() * width, Math.random() * height, 2, 2);
-    }
-  }, [code]);
-
-  return (
-    <div className="contact-fm-captcha">
-      <canvas ref={canvasRef} width={168} height={56} aria-hidden="true" />
-      <button type="button" className="contact-fm-captcha-refresh" onClick={onRefresh}>
-        New code
-      </button>
-    </div>
-  );
 }
 
 function ContactFormPanel() {
@@ -250,8 +180,6 @@ function ContactFormPanel() {
   const [email, setEmail] = useState("");
   const [service, setService] = useState(serviceOptions[0] ?? "");
   const [message, setMessage] = useState("");
-  const [captchaCode, setCaptchaCode] = useState("");
-  const [captchaInput, setCaptchaInput] = useState("");
   const [tried, setTried] = useState(false);
   const [sending, setSending] = useState(false);
   const [status, setStatus] = useState<{ tone: "ok" | "bad"; text: string } | null>(
@@ -262,19 +190,8 @@ function ContactFormPanel() {
         name,
         email,
         message,
-        captcha: captchaInput,
-        captchaCode,
       })
     : {};
-
-  useEffect(() => {
-    setCaptchaCode(createCaptchaCode());
-  }, []);
-
-  function refreshCaptcha() {
-    setCaptchaCode(createCaptchaCode());
-    setCaptchaInput("");
-  }
 
   async function onSubmit(e: FormEvent) {
     e.preventDefault();
@@ -283,8 +200,6 @@ function ContactFormPanel() {
       name,
       email,
       message,
-      captcha: captchaInput,
-      captchaCode,
     });
     setTried(true);
     setStatus(null);
@@ -295,9 +210,7 @@ function ContactFormPanel() {
           ? "contact-name"
           : first === "email"
             ? "contact-email"
-            : first === "message"
-              ? "contact-message"
-              : "contact-captcha";
+            : "contact-message";
       document.getElementById(fieldId)?.focus();
       return;
     }
@@ -321,16 +234,12 @@ function ContactFormPanel() {
           text: data?.error || "Could not send your message. Try again.",
         });
         setTried(false);
-        setCaptchaInput("");
-        setCaptchaCode(createCaptchaCode());
         return;
       }
       setName("");
       setEmail("");
       setMessage("");
-      setCaptchaInput("");
       setTried(false);
-      setCaptchaCode(createCaptchaCode());
       setStatus({ tone: "ok", text: "Message sent. We will reply soon." });
     } catch {
       setStatus({
@@ -401,26 +310,6 @@ function ContactFormPanel() {
         {errors.message ? (
           <p className="contact-fm-error" id="contact-message-error" role="alert">
             {errors.message}
-          </p>
-        ) : null}
-      </div>
-      <div className="contact-fm-field">
-        <label htmlFor="contact-captcha">Captcha</label>
-        <ContactCaptcha code={captchaCode} onRefresh={refreshCaptcha} />
-        <input
-          id="contact-captcha"
-          type="text"
-          autoComplete="off"
-          spellCheck={false}
-          value={captchaInput}
-          aria-invalid={errors.captcha ? true : undefined}
-          aria-describedby={errors.captcha ? "contact-captcha-error" : undefined}
-          placeholder="Type the characters"
-          onChange={(e) => setCaptchaInput(e.target.value)}
-        />
-        {errors.captcha ? (
-          <p className="contact-fm-error" id="contact-captcha-error" role="alert">
-            {errors.captcha}
           </p>
         ) : null}
       </div>

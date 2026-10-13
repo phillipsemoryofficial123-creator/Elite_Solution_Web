@@ -83,6 +83,7 @@ export const serviceDetails: ServiceDetailContent[] = [
   {
     slug: "accounting-and-bookkeeping",
     pageTitle: "Accounting & Bookkeeping",
+    heroBg: "/images/hero-bg-accounting.jpg",
     intro: [
       "Our expert accounting and bookkeeping services are designed to help businesses manage their financial records with accuracy and efficiency.",
     ],
@@ -168,7 +169,7 @@ export const serviceDetails: ServiceDetailContent[] = [
   {
     slug: "payroll-outsourcing",
     pageTitle: "Payroll Outsourcing Services",
-    heroBg: "/images/payroll-hero-bg.jpg",
+    heroBg: "/images/hero-bg-payroll.jpg",
     intro: [
       "Elite Solutions CPA offers payroll outsourcing services to businesses, allowing them to focus on core operations while ensuring accurate, timely payroll processing.",
     ],
@@ -212,6 +213,7 @@ export const serviceDetails: ServiceDetailContent[] = [
   {
     slug: "tax",
     pageTitle: "Tax",
+    heroBg: "/images/hero-bg-tax.jpg",
     intro: [
       "Elite Solutions CPA offers expert tax services, helping businesses navigate state and federal tax laws.",
     ],
@@ -247,6 +249,7 @@ export const serviceDetails: ServiceDetailContent[] = [
   {
     slug: "cfo-services",
     pageTitle: "CFO Services",
+    heroBg: "/images/hero-bg-cfo.jpg",
     intro: [
       "Outsourced CFO services from Elite Solutions CPA provide businesses with in-depth financial analysis, cash flow management, and strategic guidance.",
     ],
@@ -277,6 +280,7 @@ export const serviceDetails: ServiceDetailContent[] = [
   {
     slug: "audit-and-review",
     pageTitle: "Audit & Review",
+    heroBg: "/images/hero-bg-audit.jpg",
     intro: [
       "Effective audits and reviews provide clarity and confidence in your financial performance. Our professional services ensure compliance with regulations while identifying opportunities for improvement.",
     ],
@@ -347,7 +351,7 @@ export const serviceDetails: ServiceDetailContent[] = [
   {
     slug: "web-development",
     pageTitle: "Web Development",
-    heroBg: "/images/web-hero-bg-coding.jpg",
+    heroBg: "/images/hero-bg-web.jpg",
     intro: [
       "Your website is the heart of your business — it should be beautiful, functional, and built to tell your brand story.",
     ],
@@ -543,7 +547,7 @@ export const serviceDetails: ServiceDetailContent[] = [
   {
     slug: "marketing-strategies",
     pageTitle: "Marketing Strategies",
-    heroBg: "/images/marketing-hero-premium.jpg",
+    heroBg: "/images/hero-bg-marketing.jpg",
     intro: [
       "We design multi-touch marketing strategies that build brand awareness, accelerate engagement, and drive enduring success.",
     ],
@@ -681,7 +685,7 @@ export const serviceDetails: ServiceDetailContent[] = [
   {
     slug: "seo-services",
     pageTitle: "SEO Services",
-    heroBg: "/images/seo-hero-premium.jpg",
+    heroBg: "/images/hero-bg-seo.jpg",
     intro: [
       "Boost your visibility, attract the right audience, and grow your business with smart SEO solutions that drive real organic traffic.",
     ],
@@ -819,7 +823,7 @@ export const serviceDetails: ServiceDetailContent[] = [
   {
     slug: "email-marketing",
     pageTitle: "Email Marketing",
-    heroBg: "/images/email-hero-premium.jpg",
+    heroBg: "/images/hero-bg-email.jpg",
     intro: [
       "Personalized email campaigns that connect, convert, and grow your customer base — one of the most effective ways to engage customers.",
     ],
@@ -957,7 +961,7 @@ export const serviceDetails: ServiceDetailContent[] = [
   {
     slug: "help-line-services",
     pageTitle: "Help Line Services",
-    heroBg: "/images/helpline-hero-premium.jpg",
+    heroBg: "/images/hero-bg-helpline.jpg",
     intro: [
       "Dedicated helpline support that addresses inquiries, resolves issues quickly, and keeps customers satisfied.",
     ],

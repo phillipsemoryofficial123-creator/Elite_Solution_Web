@@ -40,7 +40,7 @@ export const careersPage = {
         body: "Skills valued. Growth encouraged.",
       },
     ],
-    image: "/images/careers-hero-team.jpg",
+    image: "/images/hero-bg-careers.jpg",
   },
   openings: {
     eyebrow: "Join Our Team",

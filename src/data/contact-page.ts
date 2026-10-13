@@ -6,7 +6,7 @@ export const contactPage = {
     titleBefore: "Let's grow your",
     titleAccent: "business together",
     lead: "Book a free consultation. Tell us what you need — we reply with a clear plan, timeline, and quote.",
-    image: "/images/helpline-hero-premium.jpg",
+    image: "/images/hero-bg-contact.jpg",
     highlights: [
       { icon: "phone" as const, label: "Same-day reply on business hours" },
       { icon: "email" as const, label: "Free consultation — no obligation" },

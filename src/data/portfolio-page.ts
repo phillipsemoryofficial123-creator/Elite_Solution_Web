@@ -35,7 +35,7 @@ export const portfolioStudioPage = {
     eyebrow: "Our Portfolio",
     title: "Our Work Speaks for Itself",
     lead: "Explore some of our recent projects and see how we turn ideas into powerful digital solutions.",
-    image: "/images/portfolio-hero-devices.jpg",
+    image: "/images/hero-bg-portfolio-studio.jpg",
   },
   projects: [
     {
