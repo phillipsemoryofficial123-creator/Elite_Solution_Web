@@ -1,3 +1,4 @@
+import { site } from "@/data/site";
 import { portfolioStudioPage } from "@/data/portfolio-page";
 import { pricingPage } from "@/data/pricing-page";
 import { aboutPage } from "@/data/about-page";
@@ -12,7 +13,7 @@ export const homePage = {
   hero: {
     eyebrow: "Elite Solutions USA",
     titleLine2: "Business Growth",
-    lead: "Comprehensive Financial and Non-Financial Services to Empower Growth and Success.",
+    lead: site.tagline,
     primaryLabel: "Get Started",
     primaryHref: "/contact",
     secondaryLabel: "Explore Services",

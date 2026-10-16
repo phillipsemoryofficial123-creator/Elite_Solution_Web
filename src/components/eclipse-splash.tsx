@@ -2,10 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { Cormorant_Garamond } from "next/font/google";
+import { splashSerif } from "@/fonts/splash";
 import "./eclipse-splash.css";
-
-const serif = Cormorant_Garamond({ subsets: ["latin"], weight: ["600"] });
 
 type Props = {
   /** Minimum time the splash stays visible (ms). */
@@ -84,7 +82,7 @@ export default function EclipseSplash({
             priority
           />
         </div>
-        <h1 className={`es-title ${serif.className}`}>Elite Solutions</h1>
+        <h1 className={`es-title ${splashSerif.className}`}>Elite Solutions</h1>
       </div>
     </div>
   );

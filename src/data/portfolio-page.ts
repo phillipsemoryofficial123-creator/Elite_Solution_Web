@@ -1,3 +1,5 @@
+import { site } from "@/data/site";
+
 export const portfolioStudioFilters = [
   { id: "all", label: "All" },
   { id: "finance", label: "Finance" },
@@ -34,8 +36,8 @@ export const portfolioStudioPage = {
   hero: {
     eyebrow: "Our Portfolio",
     title: "Our Work Speaks for Itself",
-    lead: "Explore some of our recent projects and see how we turn ideas into powerful digital solutions.",
-    image: "/images/hero-bg-portfolio-studio.jpg",
+    lead: site.tagline,
+    image: "/images/hero-bg-portfolio-studio-premium.jpg",
   },
   projects: [
     {

@@ -34,6 +34,7 @@ export function SiteHeader() {
 
   const links = nav.filter((item) => !item.cta);
   const cta = nav.find((item) => item.cta);
+  if (pathname.startsWith("/sign-in") || pathname.startsWith("/sign-up")) return null;
 
   return (
     <header className={`top${shown || open ? " on" : ""}`} id="top">
@@ -74,7 +75,7 @@ export function SiteHeader() {
             );
           })}
           {cta ? (
-            <GetStartedMenu label={cta.label} className="nav-call-mobile" />
+            <GetStartedMenu label={cta.label} href={cta.href} className="nav-call-mobile" />
           ) : null}
         </nav>
         <div className="bar-end">
@@ -89,7 +90,7 @@ export function SiteHeader() {
           </button>
           {cta ? (
             <span className="nav-cta">
-              <GetStartedMenu label={cta.label} />
+              <GetStartedMenu label={cta.label} href={cta.href} />
             </span>
           ) : null}
         </div>

@@ -1,8 +1,10 @@
+import { site } from "@/data/site";
+
 export const aboutPage = {
   hero: {
     eyebrow: "About Us",
     title: "Your Partner in Financial & Business Growth",
-    lead: "We provide expert financial and business solutions to help you achieve lasting success and growth.",
+    lead: site.tagline,
     ctaLabel: "Get in Touch",
     ctaHref: "/contact",
     image: "/images/hero-bg-about.jpg",

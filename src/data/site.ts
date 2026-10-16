@@ -2,7 +2,7 @@ export const site = {
   name: "Elite Solutions USA",
   shortName: "ELITE SOLUTIONS",
   tagline:
-    "Comprehensive financial and non-financial services to empower growth and success.",
+    "Comprehensive Financial and Non-Financial Services to Empower Growth and Success.",
   phone: "+1 832-951-2823",
   phoneHref: "tel:+18329512823",
   email: "info@elitesolutionscpa.com",

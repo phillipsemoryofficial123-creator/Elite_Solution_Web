@@ -1,9 +1,11 @@
+import { site } from "@/data/site";
+
 export const pricingPage = {
   hero: {
     eyebrow: "Pricing & Plans",
     titleBefore: "Affordable Pricing for",
     titleAccent: "Tailored Solutions",
-    lead: "Explore our transparent and competitive pricing plans designed to meet your unique financial and business needs.",
+    lead: site.tagline,
     highlights: [
       { icon: "fees", label: "Transparent Pricing" },
       { icon: "plans", label: "Tailored Solutions" },
@@ -107,7 +109,7 @@ export const pricingPage = {
         description:
           "Ideal for growing businesses needing a fullstack web application.",
         features: [
-          "Fullstack Web App",
+          "Fullstack Website",
           "Admin Dashboard",
           "AI Integration",
           "Lead Generation System",

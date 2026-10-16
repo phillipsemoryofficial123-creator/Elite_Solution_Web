@@ -1,3 +1,5 @@
+import { site } from "@/data/site";
+
 export type ContactChannelIcon = "phone" | "email" | "location" | "hours";
 
 export const contactPage = {
@@ -5,7 +7,7 @@ export const contactPage = {
     eyebrow: "Contact Us",
     titleBefore: "Let's grow your",
     titleAccent: "business together",
-    lead: "Book a free consultation. Tell us what you need — we reply with a clear plan, timeline, and quote.",
+    lead: site.tagline,
     image: "/images/hero-bg-contact.jpg",
     highlights: [
       { icon: "phone" as const, label: "Same-day reply on business hours" },

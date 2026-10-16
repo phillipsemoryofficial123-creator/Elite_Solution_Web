@@ -1,10 +1,54 @@
+import { site } from "@/data/site";
+
 export const csrPage = {
   hero: {
-    eyebrow: "CSR",
-    titleBefore: "Free tools for",
-    titleAccent: "your next step",
-    lead: "Build a resume or check your search presence with tools from Elite Solutions USA. Each one opens on its own site.",
-    image: "/images/hero-bg-csr-tools.jpg",
+    eyebrow: "Corporate Social Responsibility",
+    titleBefore: "Giving Back,",
+    titleAccent: "Because Business Is About People",
+    lead: site.tagline,
+    image: "/images/hero-bg-csr-people.jpg",
+  },
+  story: {
+    sections: [
+      {
+        title: "What Is Corporate Social Responsibility (CSR)?",
+        paragraphs: [
+          "Corporate Social Responsibility (CSR) is about businesses making a positive difference in the communities they serve. At Elite Solutions, we believe our responsibility goes beyond business. We use our skills, technology, and expertise to provide practical resources that help people grow and succeed.",
+        ],
+      },
+      {
+        title: "Why Is CSR Important for Businesses?",
+        paragraphs: [
+          "Every business has the opportunity to create a positive impact, whether through its expertise, resources, time, or services. CSR is not just about donations or one-time initiatives; it’s about making a meaningful, lasting difference by providing value and creating opportunities for others.",
+        ],
+      },
+    ],
+    commitmentTitle: "Our Commitment to Giving Back",
+    commitments: [
+      {
+        title: "Free Resume Builder",
+        paragraphs: [
+          "Building a professional resume can be challenging, especially for job seekers facing financial pressure. Many online platforms charge fees just to download a completed resume. We believe everyone deserves access to the tools they need to pursue career opportunities. That’s why we offer a free resume builder, helping individuals create professional resumes without hidden charges or unnecessary costs.",
+        ],
+      },
+      {
+        title: "Free Online Tools",
+        paragraphs: [
+          "As part of our commitment to supporting individuals, freelancers, startups, and small businesses, Elite Solutions provides access to a range of online tools directly through our website. Our existing SEO tools help users improve their online visibility, optimize their content, and strengthen their digital presence.",
+          "We aim to make useful digital resources more accessible, helping entrepreneurs and creators save time, work efficiently, and grow their businesses without unnecessary expenses.",
+        ],
+      },
+    ],
+    actions: [
+      {
+        label: "Build Your Free Resume",
+        href: "https://resume.elitesolutionusa.com/",
+      },
+      {
+        label: "Explore Our Free SEO Tools",
+        href: "https://eliteseotools.elitesolutionusa.com/",
+      },
+    ],
   },
   tools: [
     {
@@ -62,7 +106,7 @@ export const csrPage = {
   close: {
     titleBefore: "Empower Your Next Step",
     titleAccent: "with Elite Solutions",
-    body: "Whether you are building your career or growing your online presence, Elite Solutions provides practical tools to support your goals. Explore our resources and take a step toward greater professional and digital success.",
+    body: "At Elite Solutions, we believe that when people have access to the right resources, they have more opportunities to succeed—and that success can create a positive impact across the wider community.",
     line: "Build Better. Optimize Smarter. Grow with Elite Solutions.",
   },
 } as const;

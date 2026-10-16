@@ -1,39 +1,7 @@
 import Image from "next/image";
 import { MagButton } from "@/components/interactions";
 import { Reveal } from "@/components/reveal";
-import { csrPage, type CsrToolId } from "@/data/csr-page";
-
-const svgCommon = {
-  viewBox: "0 0 24 24",
-  fill: "none",
-  stroke: "currentColor",
-  strokeWidth: 1.75,
-  strokeLinecap: "round" as const,
-  strokeLinejoin: "round" as const,
-  "aria-hidden": true as const,
-};
-
-function ToolIcon({ id }: { id: CsrToolId }) {
-  if (id === "resume") {
-    return (
-      <svg {...svgCommon}>
-        <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" />
-        <path d="M14 3v5h5" />
-        <path d="M8 13h8" />
-        <path d="M8 17h5" />
-      </svg>
-    );
-  }
-
-  return (
-    <svg {...svgCommon}>
-      <circle cx="11" cy="11" r="6.5" />
-      <path d="M16 16.5 20.5 21" />
-      <path d="M8.5 11h5" />
-      <path d="M11 8.5v5" />
-    </svg>
-  );
-}
+import { csrPage } from "@/data/csr-page";
 
 function FeatureCheck() {
   return (
@@ -44,7 +12,7 @@ function FeatureCheck() {
 }
 
 export function CsrStudioPage() {
-  const { hero, tools, details, close } = csrPage;
+  const { hero, story, tools, details, close } = csrPage;
 
   return (
     <div className="csr-studio">
@@ -67,7 +35,7 @@ export function CsrStudioPage() {
             </Reveal>
             <Reveal>
               <h1 className="csr-title csr-hero-title">
-                {hero.titleBefore}{" "}
+                <span>{hero.titleBefore}</span>
                 <span className="csr-accent">{hero.titleAccent}</span>
               </h1>
             </Reveal>
@@ -76,76 +44,90 @@ export function CsrStudioPage() {
             </Reveal>
             <Reveal className="csr-highlights" delay="140ms">
               {tools.map((tool) => (
-                <a key={tool.id} className="csr-highlight" href={`#${tool.id}`}>
-                  <span className="csr-highlight-ic" aria-hidden="true">
-                    <ToolIcon id={tool.id} />
-                  </span>
-                  <span>{tool.name}</span>
-                </a>
+                <MagButton key={tool.id}>
+                  <a className="btn mag gold" href={`#${tool.id}`}>
+                    {tool.name}
+                    <span aria-hidden="true"> →</span>
+                  </a>
+                </MagButton>
               ))}
             </Reveal>
           </div>
         </div>
       </section>
 
-      {details.map((detail) => {
-        const tool = tools.find((item) => item.id === detail.id);
-        return (
-          <section
-            key={detail.id}
-            className="sec csr-detail"
-            id={detail.id}
-          >
-            <div className="w csr-detail-grid">
-              <div className="csr-detail-copy">
-                <Reveal as="p" className="csr-eyebrow">
-                  {detail.eyebrow}
-                </Reveal>
-                <Reveal>
-                  <h2 className="csr-title">
-                    {detail.titleBefore}{" "}
-                    <span className="csr-accent">{detail.titleAccent}</span>
-                  </h2>
-                </Reveal>
-                <Reveal as="p" className="csr-detail-body" delay="60ms">
-                  {detail.body}
-                </Reveal>
-                <Reveal as="p" className="csr-detail-close" delay="100ms">
-                  {detail.close}
-                </Reveal>
-                {tool ? (
-                  <Reveal className="csr-detail-actions" delay="140ms">
-                    <MagButton>
-                      <a
-                        className="btn gold mag"
-                        href={tool.href}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        {tool.cta}
-                        <span aria-hidden="true"> →</span>
-                      </a>
-                    </MagButton>
-                  </Reveal>
-                ) : null}
-              </div>
-              <Reveal className="csr-feature-panel" delay="80ms">
-                <h3>{detail.featuresLabel}</h3>
-                <ul className="csr-features">
-                  {detail.features.map((feature) => (
-                    <li key={feature}>
-                      <span className="csr-feature-check">
-                        <FeatureCheck />
-                      </span>
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+      <section className="sec csr-story">
+        <div className="w">
+          <div className="csr-intro">
+            {story.sections.map((section, index) => (
+              <Reveal
+                key={section.title}
+                className="csr-story-block"
+                delay={`${index * 60}ms`}
+              >
+                <h3>{section.title}</h3>
+                {section.paragraphs.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
               </Reveal>
-            </div>
-          </section>
-        );
-      })}
+            ))}
+          </div>
+          <div className="csr-commit">
+            <Reveal className="csr-commit-title">
+              <h3>{story.commitmentTitle}</h3>
+            </Reveal>
+            {story.commitments.map((item, index) => {
+              const action = story.actions[index];
+              const featureId = index === 0 ? "resume" : index === 1 ? "seo" : null;
+              const features = featureId ? details.find((detail) => detail.id === featureId) : null;
+              return (
+                <Reveal
+                  key={item.title}
+                  className={`csr-story-item${features ? " has-features" : ""}`}
+                  delay={`${index * 60}ms`}
+                >
+                  <div id={featureId ?? undefined}>
+                    <h4>{item.title}</h4>
+                    {item.paragraphs.map((paragraph) => (
+                      <p key={paragraph}>{paragraph}</p>
+                    ))}
+                    {action ? (
+                      <div className="csr-story-actions">
+                        <MagButton>
+                          <a
+                            className="btn mag gold"
+                            href={action.href}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            {action.label}
+                            <span aria-hidden="true"> →</span>
+                          </a>
+                        </MagButton>
+                      </div>
+                    ) : null}
+                  </div>
+                  {features ? (
+                    <div className="csr-feature-panel">
+                      <h3>{features.featuresLabel}</h3>
+                      <ul className="csr-features">
+                        {features.features.map((feature) => (
+                          <li key={feature}>
+                            <span className="csr-feature-check">
+                              <FeatureCheck />
+                            </span>
+                            <span>{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ) : null}
+                </Reveal>
+              );
+            })}
+          </div>
+        </div>
+      </section>
 
       <section className="sec csr-close">
         <div className="w">

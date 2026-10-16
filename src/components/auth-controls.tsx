@@ -5,9 +5,11 @@ import Link from "next/link";
 
 export function GetStartedMenu({
   label,
+  href,
   className = "",
 }: {
   label: string;
+  href: string;
   className?: string;
 }) {
   return (
@@ -21,7 +23,7 @@ export function GetStartedMenu({
           }}
         />
       </Show>
-      <Link className="call" href="/sign-in">
+      <Link className="call" href={href}>
         {label}
       </Link>
     </div>

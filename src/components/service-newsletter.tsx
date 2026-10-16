@@ -1,7 +1,13 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Reveal } from "@/components/reveal";
 
 export function ServiceNewsletter() {
+  const pathname = usePathname();
+  if (pathname.startsWith("/sign-in") || pathname.startsWith("/sign-up")) return null;
+
   return (
     <section className="sec svc-nl">
       <div className="svc-nl-w">

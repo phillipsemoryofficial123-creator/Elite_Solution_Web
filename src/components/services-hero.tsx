@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { SpotSurface } from "@/components/interactions";
 import { Typewriter } from "@/components/typewriter";
-import { servicesHeroWords } from "@/data/site";
+import { servicesHeroWords, site } from "@/data/site";
 
 export function ServicesHero() {
   return (
@@ -31,10 +31,7 @@ export function ServicesHero() {
             </span>
             <Typewriter words={servicesHeroWords} />
           </h1>
-          <p className="enter e2 page-enter">
-            Financial and non-financial work, handled by one team — from books
-            and tax to websites, branding and growth.
-          </p>
+          <p className="enter e2 page-enter">{site.tagline}</p>
           <div className="services-hero-ctas enter e3 page-enter">
             <a className="services-hero-cta" href="/services#financial">
               Financial

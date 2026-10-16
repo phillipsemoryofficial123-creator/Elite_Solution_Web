@@ -1,3 +1,5 @@
+import { site } from "@/data/site";
+
 export const careersCategories = [
   { id: "all", label: "All Positions" },
   { id: "development", label: "Development" },
@@ -27,7 +29,7 @@ export const careersPage = {
     eyebrow: "Careers",
     titleBefore: "Join",
     titleAccent: "Elite Solutions",
-    lead: "At Elite Solutions, we're not just about numbers — we're about people, innovation, and making an impact. Join a team where your skills are valued, growth is encouraged, and every day presents an opportunity to make a difference.",
+    lead: site.tagline,
     values: [
       {
         icon: "culture",

@@ -5,6 +5,7 @@ import { ServiceDetailHero } from "@/components/service-detail-hero";
 import { ServiceStack } from "@/components/service-stack";
 import { ServiceZigzag } from "@/components/service-zigzag";
 import { getServiceDetail } from "@/data/service-details";
+import { site } from "@/data/site";
 import {
   serviceGroupHref,
   type Service,
@@ -30,7 +31,7 @@ export function ServiceSinglePage({
     <>
       <ServiceDetailHero
         title={detail?.pageTitle ?? service.name}
-        subtitle={detail?.intro[0] ?? service.summary}
+        subtitle={site.tagline}
         imageSrc={
           detail?.heroBg !== undefined
             ? detail.heroBg || undefined
