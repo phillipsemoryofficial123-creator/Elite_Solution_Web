@@ -110,15 +110,15 @@ export function HomeStudioPage() {
             <Reveal as="p" className="home-lead" delay="80ms">
               {about.lead}
             </Reveal>
-            <Reveal className="home-actions" delay="120ms">
-              <MagButton>
-                <Link className="btn gold mag" href={about.ctaHref}>
-                  {about.ctaLabel}
-                  <span aria-hidden="true"> →</span>
-                </Link>
-              </MagButton>
-            </Reveal>
           </div>
+          <Reveal className="home-about-actions home-actions" delay="120ms">
+            <MagButton>
+              <Link className="btn gold mag" href={about.ctaHref}>
+                {about.ctaLabel}
+                <span aria-hidden="true"> →</span>
+              </Link>
+            </MagButton>
+          </Reveal>
         </div>
       </section>
 
