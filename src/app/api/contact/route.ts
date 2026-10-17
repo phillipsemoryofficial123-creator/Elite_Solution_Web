@@ -1,4 +1,5 @@
 import nodemailer from "nodemailer";
+import { pricingPage } from "@/data/pricing-page";
 import { services } from "@/data/services";
 import { site } from "@/data/site";
 
@@ -6,6 +7,10 @@ const allowedServices = new Set([
   ...services.map((service) => service.name),
   "Not sure yet",
 ]);
+
+const allowedPlans = new Set(
+  pricingPage.plans.items.map((plan) => plan.name),
+);
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -29,6 +34,7 @@ export async function POST(request: Request) {
   const name = clean(fields.name);
   const email = clean(fields.email);
   const service = clean(fields.service);
+  const plan = clean(fields.plan);
   const message = clean(fields.message);
 
   if (name.length < 2 || name.length > 120 || /[\r\n]/.test(name)) {
@@ -43,6 +49,9 @@ export async function POST(request: Request) {
   }
   if (!allowedServices.has(service)) {
     return Response.json({ error: "Choose a service." }, { status: 400 });
+  }
+  if (plan && !allowedPlans.has(plan)) {
+    return Response.json({ error: "Choose a valid plan." }, { status: 400 });
   }
   if (message.length < 10 || message.length > 5000) {
     return Response.json({ error: "Write at least 10 characters." }, { status: 400 });
@@ -81,8 +90,10 @@ export async function POST(request: Request) {
       from,
       to,
       replyTo: email,
-      subject: `Consultation request: ${service}`,
-      text: `Name: ${name}\nEmail: ${email}\nService: ${service}\n\n${message}`,
+      subject: plan
+        ? `Consultation request: ${service} (${plan} plan)`
+        : `Consultation request: ${service}`,
+      text: `Name: ${name}\nEmail: ${email}\nService: ${service}\nPlan: ${plan || "Not selected"}\n\n${message}`,
     });
   } catch (error) {
     console.error(

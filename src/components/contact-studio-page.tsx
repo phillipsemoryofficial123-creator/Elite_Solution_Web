@@ -14,6 +14,7 @@ import {
   contactPage,
   type ContactChannelIcon,
 } from "@/data/contact-page";
+import { pricingPage } from "@/data/pricing-page";
 import { services } from "@/data/services";
 import { site } from "@/data/site";
 
@@ -64,12 +65,19 @@ const serviceOptions = [
   "Not sure yet",
 ];
 
-function ServiceDropdown({
+const planOptions = [
+  "Not selected",
+  ...pricingPage.plans.items.map((plan) => plan.name),
+];
+
+function ContactDropdown({
   value,
+  options,
   onChange,
   labelledBy,
 }: {
   value: string;
+  options: string[];
   onChange: (value: string) => void;
   labelledBy: string;
 }) {
@@ -125,7 +133,7 @@ function ServiceDropdown({
           role="listbox"
           aria-labelledby={labelledBy}
         >
-          {serviceOptions.map((opt) => {
+          {options.map((opt) => {
             const selected = opt === value;
             return (
               <li key={opt} role="option" aria-selected={selected}>
@@ -179,6 +187,7 @@ function ContactFormPanel() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [service, setService] = useState(serviceOptions[0] ?? "");
+  const [plan, setPlan] = useState("Not selected");
   const [message, setMessage] = useState("");
   const [tried, setTried] = useState(false);
   const [sending, setSending] = useState(false);
@@ -193,17 +202,25 @@ function ContactFormPanel() {
       })
     : {};
 
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const planParam = params.get("plan")?.trim() ?? "";
+    if (planParam && planOptions.includes(planParam)) {
+      setPlan(planParam);
+    }
+  }, []);
+
   async function onSubmit(e: FormEvent) {
     e.preventDefault();
     if (sending) return;
-    const next = contactFieldErrors({
+    const nextErrors = contactFieldErrors({
       name,
       email,
       message,
     });
     setTried(true);
     setStatus(null);
-    const first = (Object.keys(next) as ContactField[])[0];
+    const first = (Object.keys(nextErrors) as ContactField[])[0];
     if (first) {
       const fieldId =
         first === "name"
@@ -217,6 +234,7 @@ function ContactFormPanel() {
 
     setSending(true);
     try {
+      const selectedPlan = plan === "Not selected" ? "" : plan;
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -224,6 +242,7 @@ function ContactFormPanel() {
           name: name.trim(),
           email: email.trim(),
           service,
+          plan: selectedPlan,
           message: message.trim(),
         }),
       });
@@ -239,6 +258,7 @@ function ContactFormPanel() {
       setName("");
       setEmail("");
       setMessage("");
+      setPlan("Not selected");
       setTried(false);
       setStatus({ tone: "ok", text: "Message sent. We will reply soon." });
     } catch {
@@ -289,13 +309,25 @@ function ContactFormPanel() {
           ) : null}
         </div>
       </div>
-      <div className="contact-fm-field">
-        <label id="contact-service-label">Service you need</label>
-        <ServiceDropdown
-          value={service}
-          onChange={setService}
-          labelledBy="contact-service-label"
-        />
+      <div className="contact-fm-row">
+        <div className="contact-fm-field">
+          <label id="contact-service-label">Service you need</label>
+          <ContactDropdown
+            value={service}
+            options={serviceOptions}
+            onChange={setService}
+            labelledBy="contact-service-label"
+          />
+        </div>
+        <div className={"contact-fm-field" + (plan !== "Not selected" ? " has-plan" : "")}>
+          <label id="contact-plan-label">Selected plan</label>
+          <ContactDropdown
+            value={plan}
+            options={planOptions}
+            onChange={setPlan}
+            labelledBy="contact-plan-label"
+          />
+        </div>
       </div>
       <div className="contact-fm-field">
         <label htmlFor="contact-message">Message</label>
@@ -314,7 +346,7 @@ function ContactFormPanel() {
         ) : null}
       </div>
       {status ? (
-        <p className={`contact-fm-status ${status.tone}`} role="status">
+        <p className={"contact-fm-status " + status.tone} role="status">
           {status.text}
         </p>
       ) : null}

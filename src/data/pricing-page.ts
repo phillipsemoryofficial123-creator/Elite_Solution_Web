@@ -93,7 +93,7 @@ export const pricingPage = {
           "Deployment Included",
         ],
         ctaLabel: "Get Started",
-        ctaHref: "/contact",
+        ctaHref: "/contact?plan=Starter#consultation",
       },
       {
         id: "growth",
@@ -120,7 +120,7 @@ export const pricingPage = {
           "API Development",
         ],
         ctaLabel: "Start Growing",
-        ctaHref: "/contact",
+        ctaHref: "/contact?plan=Growth#consultation",
       },
       {
         id: "premium",
@@ -147,7 +147,7 @@ export const pricingPage = {
           "Advanced Security",
         ],
         ctaLabel: "Contact Us",
-        ctaHref: "/contact",
+        ctaHref: "/contact?plan=Premium#consultation",
       },
     ],
   },

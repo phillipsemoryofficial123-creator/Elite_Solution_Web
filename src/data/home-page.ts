@@ -1,8 +1,13 @@
 import { site } from "@/data/site";
+import { blogsPage, featuredBlogIds } from "@/data/blogs-page";
 import { portfolioStudioPage } from "@/data/portfolio-page";
 import { pricingPage } from "@/data/pricing-page";
 import { aboutPage } from "@/data/about-page";
 import { financialServices, nonFinancialServices } from "@/data/services";
+
+const featuredBlogs = featuredBlogIds
+  .map((id) => blogsPage.posts.find((post) => post.id === id))
+  .filter((post) => post != null);
 
 const featuredIds = ["hussain-catering", "burger-buz", "butt-karahi"];
 const featuredPortfolio = featuredIds.map((id) =>
@@ -99,6 +104,15 @@ export const homePage = {
     ],
     ctaLabel: "See pricing",
     ctaHref: "/pricing",
+  },
+  blogs: {
+    eyebrow: blogsPage.hero.eyebrow,
+    titleBefore: "Insights that",
+    titleAccent: "grow with you",
+    lead: blogsPage.listing.lead,
+    ctaLabel: "View all blogs",
+    ctaHref: "/blogs",
+    posts: featuredBlogs,
   },
   process: {
     eyebrow: "How It Works",

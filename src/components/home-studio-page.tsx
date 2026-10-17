@@ -9,7 +9,7 @@ import { homePage } from "@/data/home-page";
 import { servicesHeroWords } from "@/data/site";
 
 export function HomeStudioPage() {
-  const { hero, services, about, portfolio, pricing, process } = homePage;
+  const { hero, services, about, portfolio, pricing, blogs, process } = homePage;
 
   return (
     <div className="home-studio">
@@ -193,6 +193,66 @@ export function HomeStudioPage() {
             <MagButton>
               <Link className="btn gold mag" href={pricing.ctaHref}>
                 {pricing.ctaLabel}
+                <span aria-hidden="true"> →</span>
+              </Link>
+            </MagButton>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="sec home-blogs" id="blogs">
+        <div className="w">
+          <div className="home-sec-head">
+            <Reveal as="p" className="home-eyebrow">
+              {blogs.eyebrow}
+            </Reveal>
+            <Reveal>
+              <h2 className="home-title">
+                {blogs.titleBefore}{" "}
+                <span className="home-accent">{blogs.titleAccent}</span>
+              </h2>
+            </Reveal>
+            <Reveal as="p" className="home-lead" delay="80ms">
+              {blogs.lead}
+            </Reveal>
+          </div>
+          <ul className="home-blogs-grid">
+            {blogs.posts.map((post, i) => (
+              <li key={post.id}>
+                <Reveal delay={`${i * 70}ms`}>
+                  <article className="home-blog-card">
+                    <Link className="home-blog-card-link" href={`/blogs/${post.slug}`}>
+                      <div className="home-blog-media">
+                        <Image
+                          src={post.image}
+                          alt=""
+                          fill
+                          sizes="(max-width:900px) 100vw, 33vw"
+                          className="home-blog-img"
+                        />
+                      </div>
+                      <div className="home-blog-copy">
+                        <div className="home-blog-meta">
+                          <span className="home-blog-cat">{post.category}</span>
+                          <span>{post.readTime}</span>
+                        </div>
+                        <strong>{post.title}</strong>
+                        <p>{post.excerpt}</p>
+                        <span className="home-blog-more">
+                          Read article
+                          <span aria-hidden="true"> →</span>
+                        </span>
+                      </div>
+                    </Link>
+                  </article>
+                </Reveal>
+              </li>
+            ))}
+          </ul>
+          <Reveal className="home-sec-cta">
+            <MagButton>
+              <Link className="btn gold mag" href={blogs.ctaHref}>
+                {blogs.ctaLabel}
                 <span aria-hidden="true"> →</span>
               </Link>
             </MagButton>

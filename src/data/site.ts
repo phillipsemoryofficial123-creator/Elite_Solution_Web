@@ -76,6 +76,7 @@ export const nav: {
   { href: "/pricing", label: "Pricing" },
   { href: "/careers", label: "Careers" },
   { href: "/csr", label: "CSR" },
+  { href: "/blogs", label: "Blogs" },
   {
     href: "https://elitebase-neon.vercel.app/",
     label: "E-portal",

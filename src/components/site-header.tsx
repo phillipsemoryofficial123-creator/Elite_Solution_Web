@@ -10,7 +10,7 @@ import { nav } from "@/data/site";
 export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const [shown, setShown] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     setOpen(false);
@@ -21,7 +21,7 @@ export function SiteHeader() {
     const onScroll = () => {
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => {
-        setShown(window.scrollY > 48);
+        setScrolled(window.scrollY > 48);
       });
     };
     onScroll();
@@ -37,7 +37,7 @@ export function SiteHeader() {
   if (pathname.startsWith("/sign-in") || pathname.startsWith("/sign-up")) return null;
 
   return (
-    <header className={`top${shown || open ? " on" : ""}`} id="top">
+    <header className={`top${scrolled ? " scrolled" : ""}`} id="top">
       <div className="bar">
         <Link className="brand" href="/" aria-label="Elite Solution home">
           <BrandLogo priority />
@@ -80,13 +80,18 @@ export function SiteHeader() {
         </nav>
         <div className="bar-end">
           <button
-            className="burger"
+            className={`burger${open ? " open" : ""}`}
             type="button"
             aria-expanded={open}
             aria-controls="nav"
+            aria-label={open ? "Close menu" : "Open menu"}
             onClick={() => setOpen((v) => !v)}
           >
-            Menu
+            <span className="burger-box" aria-hidden="true">
+              <span className="burger-line" />
+              <span className="burger-line" />
+              <span className="burger-line" />
+            </span>
           </button>
           {cta ? (
             <span className="nav-cta">
