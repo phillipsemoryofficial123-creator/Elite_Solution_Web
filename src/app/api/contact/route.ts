@@ -3,12 +3,12 @@ import { pricingPage } from "@/data/pricing-page";
 import { services } from "@/data/services";
 import { site } from "@/data/site";
 
-const allowedServices = new Set([
+const allowedServices = new Set<string>([
   ...services.map((service) => service.name),
   "Not sure yet",
 ]);
 
-const allowedPlans = new Set(
+const allowedPlans = new Set<string>(
   pricingPage.plans.items.map((plan) => plan.name),
 );
 
