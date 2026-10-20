@@ -1,11 +1,6 @@
 import type { Metadata } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
 import { bodyFont, headFont, heroDisplayFont } from "@/fonts";
-import { ServiceNewsletter } from "@/components/service-newsletter";
-import { SiteFooter } from "@/components/site-footer";
-import EclipseSplash from "@/components/eclipse-splash";
-import { ScrollProgress } from "@/components/scroll-progress";
-import { SiteHeader } from "@/components/site-header";
 import { site } from "@/data/site";
 import "./globals.css";
 
@@ -35,14 +30,7 @@ export default function RootLayout({
         data-theme="dark"
         className={`${headFont.variable} ${bodyFont.variable} ${heroDisplayFont.variable} h-full`}
       >
-        <body className="min-h-full flex flex-col">
-          <EclipseSplash />
-          <ScrollProgress />
-          <SiteHeader />
-          <main className="flex-1">{children}</main>
-          <ServiceNewsletter />
-          <SiteFooter />
-        </body>
+        <body className="min-h-full flex flex-col">{children}</body>
       </html>
     </ClerkProvider>
   );

@@ -1,0 +1,285 @@
+.ronot {
+  position: fixed;
+  right: max(20px, env(safe-area-inset-right));
+  bottom: max(20px, env(safe-area-inset-bottom));
+  z-index: 86;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 14px;
+}
+
+.ronot-launch {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px 8px 8px;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  color: #16161a;
+  background: linear-gradient(135deg, #f3d77a, #c9a227);
+  box-shadow:
+    0 14px 36px rgba(12, 19, 48, 0.28),
+    0 0 0 1px rgba(243, 215, 122, 0.35);
+  font: inherit;
+}
+
+.ronot-launch strong {
+  display: block;
+  font-size: 14px;
+  line-height: 1.1;
+}
+
+.ronot-launch small {
+  display: block;
+  font-size: 11px;
+  opacity: 0.72;
+}
+
+.ronot-panel {
+  width: min(380px, calc(100vw - 32px));
+  height: min(580px, calc(100vh - 120px));
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 28px;
+  background:
+    radial-gradient(420px 180px at 100% 0%, rgba(243, 215, 122, 0.18), transparent 55%),
+    linear-gradient(180deg, #141c38, #0b1228);
+  border: 1px solid rgba(243, 215, 122, 0.22);
+  box-shadow: 0 30px 70px rgba(6, 10, 24, 0.48);
+  color: #e8ecf7;
+}
+
+.ronot-head,
+.ronot-composer,
+.ronot-legal {
+  padding: 16px 16px 12px;
+}
+
+.ronot-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid rgba(127, 161, 230, 0.16);
+}
+
+.ronot-identity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ronot-kicker {
+  margin: 0;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #f3d77a;
+}
+
+.ronot-head h2 {
+  margin: 2px 0 0;
+  font-size: 20px;
+  color: #fff;
+}
+
+.ronot-status {
+  margin: 4px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #a8b2d0;
+}
+
+.ronot-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #6ee7a8;
+  box-shadow: 0 0 0 4px rgba(110, 231, 168, 0.16);
+}
+
+.ronot-icon-btn {
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.ronot-thread {
+  flex: 1;
+  overflow: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ronot-bubble {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  max-width: 92%;
+}
+
+.ronot-bubble p {
+  margin: 0;
+  padding: 11px 13px;
+  border-radius: 16px;
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.ronot-bubble--assistant {
+  align-self: flex-start;
+}
+
+.ronot-bubble--assistant p {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(127, 161, 230, 0.16);
+}
+
+.ronot-bubble--user {
+  align-self: flex-end;
+}
+
+.ronot-bubble--user p {
+  background: linear-gradient(135deg, #c9a227, #f3d77a);
+  color: #16161a;
+}
+
+.ronot-error {
+  margin: 0;
+  color: #f3d77a;
+  font-size: 12px;
+}
+
+.ronot-stars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0 16px 10px;
+}
+
+.ronot-stars button {
+  border: 1px solid rgba(243, 215, 122, 0.28);
+  background: rgba(243, 215, 122, 0.08);
+  color: #f3d77a;
+  border-radius: 999px;
+  padding: 7px 10px;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.ronot-stars button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ronot-composer {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  padding-top: 8px;
+}
+
+.ronot-composer textarea {
+  flex: 1;
+  resize: none;
+  min-height: 42px;
+  max-height: 110px;
+  border: 1px solid rgba(127, 161, 230, 0.2);
+  background: rgba(8, 12, 28, 0.7);
+  color: #fff;
+  border-radius: 14px;
+  padding: 10px 12px;
+  font: inherit;
+}
+
+.ronot-composer button {
+  border: 0;
+  border-radius: 12px;
+  padding: 10px 14px;
+  background: linear-gradient(135deg, #f3d77a, #c9a227);
+  color: #16161a;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ronot-composer button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.ronot-legal {
+  margin: 0;
+  padding-top: 0;
+  font-size: 11px;
+  color: #8d97b5;
+}
+
+.ronot-legal a {
+  color: #f3d77a;
+}
+
+.ronot-face {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #0c1330;
+  box-shadow: inset 0 0 0 1px rgba(243, 215, 122, 0.35);
+  flex: none;
+}
+
+.ronot-face svg {
+  width: 36px;
+  height: 36px;
+}
+
+.ronot-face.is-compact {
+  width: 28px;
+  height: 28px;
+}
+
+.ronot-face.is-compact svg {
+  width: 22px;
+  height: 22px;
+}
+
+.ronot-face.is-live {
+  animation: ronotPulse 2.2s ease-in-out infinite;
+}
+
+@keyframes ronotPulse {
+  0%,
+  100% {
+    box-shadow:
+      inset 0 0 0 1px rgba(243, 215, 122, 0.35),
+      0 0 0 0 rgba(201, 162, 39, 0.35);
+  }
+  50% {
+    box-shadow:
+      inset 0 0 0 1px rgba(243, 215, 122, 0.55),
+      0 0 0 8px rgba(201, 162, 39, 0);
+  }
+}
+
+@media (max-width: 720px) {
+  .ronot-panel {
+    width: min(100vw - 24px, 400px);
+    height: min(72vh, 560px);
+  }
+}

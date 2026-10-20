@@ -1,6 +1,6 @@
 "use client";
 
-import { Show, UserButton } from "@clerk/nextjs";
+import { Show } from "@clerk/nextjs";
 import Link from "next/link";
 
 export function GetStartedMenu({
@@ -15,13 +15,9 @@ export function GetStartedMenu({
   return (
     <div className={`get-started ${className}`.trim()}>
       <Show when="signed-in">
-        <UserButton
-          appearance={{
-            elements: {
-              avatarBox: "auth-avatar",
-            },
-          }}
-        />
+        <Link className="nav-admin" href="/admin">
+          Admin Dashboard
+        </Link>
       </Show>
       <Link className="call" href={href}>
         {label}
