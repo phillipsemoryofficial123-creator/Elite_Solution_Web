@@ -112,8 +112,8 @@ h1,h2,h3{font-family:var(--head);line-height:1.12;margin:0}
 .brand svg{width:34px;height:34px}
 .brand:hover svg{animation:spin1 1.2s ease}
 @keyframes spin1{to{transform:rotate(360deg)}}
-.nav{display:flex;align-items:center;justify-content:center;gap:4px;position:absolute;left:54%;top:50%;transform:translate(-50%,-50%);width:max-content}
-.nav a{position:relative;text-decoration:none;color:#1A274F;font-weight:700;font-size:14px;padding:6px 12px;opacity:.82}
+.nav{display:flex;align-items:center;justify-content:center;gap:2px;position:absolute;left:46%;top:50%;transform:translate(-50%,-50%);width:max-content}
+.nav a{position:relative;text-decoration:none;color:#1A274F;font-weight:700;font-size:13px;padding:6px 8px;opacity:.82}
 .nav a::after{content:"";position:absolute;left:14px;right:14px;bottom:3px;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:0 50%;transition:transform .3s}
 .nav a:hover{opacity:1;color:var(--navy)}.nav a:hover::after,.nav a[aria-current="page"]::after{transform:scaleX(1)}
 .nav a[aria-current="page"]{opacity:1;color:var(--navy)}
@@ -123,7 +123,7 @@ h1,h2,h3{font-family:var(--head);line-height:1.12;margin:0}
 .burger.open .burger-line:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .burger.open .burger-line:nth-child(2){opacity:0}
 .burger.open .burger-line:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.bar-end{position:relative;z-index:1;margin-left:auto;display:inline-flex;align-items:center;gap:10px}
+.bar-end{position:relative;z-index:2;margin-left:auto;display:inline-flex;align-items:center;gap:8px;background:#fff;border-radius:999px;padding-left:4px}
 .nav-cta{position:relative;z-index:1;margin-left:0;display:inline-flex;align-items:center;gap:10px}
 .nav .nav-call-mobile,.nav-auth-mobile{display:none}
 .call{margin-left:0;background:var(--gold);color:#16161A;font:inherit;font-weight:600;padding:8px 16px;border-radius:999px;border:0;opacity:1;font-size:13px;text-decoration:none;display:inline-flex;align-items:center;gap:6px;cursor:pointer}
@@ -132,10 +132,10 @@ h1,h2,h3{font-family:var(--head);line-height:1.12;margin:0}
 .get-started{display:inline-flex;align-items:center;gap:8px}
 .nav .get-started a.call{padding:8px 16px;opacity:1;color:#16161A}
 .nav .get-started a.call::after{display:none}
-.nav-admin{font:inherit;font-weight:600;font-size:13px;color:#1A274F;text-decoration:none;padding:6px 4px;white-space:nowrap;transition:color .2s,opacity .2s}
-.nav-admin:hover{color:var(--gold-ink,#8a6a12);opacity:.9}
-.nav .get-started a.nav-admin{opacity:1;color:#1A274F}
-.nav .get-started a.nav-admin::after{display:none}
+.nav .nav-admin{display:none}
+.bar-end .nav-admin{display:inline-flex;align-items:center;font:inherit;font-weight:700;font-size:13px;color:#1A274F;text-decoration:none;padding:8px 14px;border-radius:999px;border:1px solid rgba(26,39,79,.18);background:#fff;white-space:nowrap;line-height:1}
+.bar-end .nav-admin::after{display:none}
+.bar-end .nav-admin:hover{background:rgba(26,39,79,.05);opacity:1;color:#1A274F}
 .auth-controls{display:inline-flex;align-items:center;gap:8px}
 .auth-signin{appearance:none;border:1px solid rgba(26,39,79,.16);background:rgba(26,39,79,.04);color:#1A274F;font:inherit;font-weight:600;font-size:13px;padding:8px 14px;border-radius:999px;cursor:pointer;transition:background .2s,border-color .2s}
 .auth-signin:hover{background:rgba(26,39,79,.08);border-color:rgba(26,39,79,.28)}
@@ -1859,10 +1859,12 @@ footer a{text-decoration:none}
   .bar{padding:6px 12px}
   .burger{display:grid}
   .nav-cta{display:none}
-  .bar-end{gap:8px}
+  .bar-end{gap:8px;background:transparent;padding-left:0}
+  .bar-end .nav-admin{display:none}
   .nav{display:none;position:absolute;left:0;right:0;top:calc(100% + 8px);transform:none;background:#fff;flex-direction:column;align-items:flex-start;gap:2px;padding:12px 18px 18px;border:1px solid rgba(20,32,80,.08);border-radius:16px;box-shadow:0 16px 32px rgba(20,32,80,.12);width:auto}
   .nav.open{display:flex}
   .nav a{padding:10px 0;font-size:16px;color:#1A274F}.nav a::after{left:0;right:0}
+  .nav .nav-admin{display:inline-flex;padding:10px 0;border:0;background:transparent;border-radius:0;font-size:16px}
   .nav-auth-mobile{display:block;margin:12px 0 4px}
   .nav .nav-call-mobile{display:inline-flex;margin:10px 0 0}
   .sec{padding:64px 0}

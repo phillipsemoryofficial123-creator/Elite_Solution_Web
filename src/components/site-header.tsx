@@ -74,6 +74,13 @@ export function SiteHeader() {
               </Link>
             );
           })}
+          <Link
+            className="nav-admin"
+            href="/admin"
+            aria-current={pathname.startsWith("/admin") ? "page" : undefined}
+          >
+            Admin
+          </Link>
           {cta ? (
             <GetStartedMenu label={cta.label} href={cta.href} className="nav-call-mobile" />
           ) : null}
@@ -93,6 +100,13 @@ export function SiteHeader() {
               <span className="burger-line" />
             </span>
           </button>
+          <Link
+            className="nav-admin"
+            href="/admin"
+            aria-current={pathname.startsWith("/admin") ? "page" : undefined}
+          >
+            Admin
+          </Link>
           {cta ? (
             <span className="nav-cta">
               <GetStartedMenu label={cta.label} href={cta.href} />

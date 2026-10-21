@@ -1,13 +1,9 @@
 import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { ADMIN_COOKIE, verifyAdminToken } from "@/lib/admin-session";
 
-const isProtectedRoute = createRouteMatcher([
-  "/admin(.*)",
-  "/api/seo(.*)",
-]);
-
-/** Cron routes authenticate via CRON_SECRET, not Clerk sessions. */
+/** Cron routes authenticate via CRON_SECRET, not the admin session. */
 const isCronRoute = createRouteMatcher(["/api/seo/cron(.*)"]);
 
 type RedirectRow = { from_path: string; to_url: string; status_code: number };
@@ -73,15 +69,33 @@ async function maybeRedirect(request: NextRequest): Promise<NextResponse | null>
   return NextResponse.redirect(target, status);
 }
 
-export default clerkMiddleware(async (auth, request) => {
+export default clerkMiddleware(async (_auth, request) => {
   const redirected = await maybeRedirect(request);
   if (redirected) return redirected;
 
-  if (isProtectedRoute(request) && !isCronRoute(request)) {
-    await auth.protect();
+  const path = request.nextUrl.pathname;
+  const needsAdmin =
+    (path.startsWith("/admin") && path !== "/admin/login") ||
+    (path.startsWith("/api/seo") && !isCronRoute(request));
+
+  if (needsAdmin) {
+    const ok = await verifyAdminToken(request.cookies.get(ADMIN_COOKIE)?.value);
+    if (!ok) {
+      if (path.startsWith("/api/")) {
+        return NextResponse.json({ error: "Authentication required." }, { status: 401 });
+      }
+      const url = request.nextUrl.clone();
+      url.pathname = "/admin/login";
+      url.search = "";
+      return NextResponse.redirect(url);
+    }
   }
 
-  const response = NextResponse.next();
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set("x-pathname", request.nextUrl.pathname);
+  const response = NextResponse.next({
+    request: { headers: requestHeaders },
+  });
   response.headers.set("x-pathname", request.nextUrl.pathname);
   response.headers.set("X-Content-Type-Options", "nosniff");
   response.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");

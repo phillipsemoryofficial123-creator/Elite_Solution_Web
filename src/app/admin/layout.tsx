@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { UserButton } from "@clerk/nextjs";
-import { currentUser } from "@clerk/nextjs/server";
-import { AccessDenied } from "@/components/admin/access-denied";
+import { headers } from "next/headers";
+import { redirect } from "next/navigation";
 import { AdminSidebar } from "@/components/admin/sidebar";
 import { getSeoSession } from "@/lib/seo/auth";
+import { logoutAdmin } from "./login/actions";
 import "./admin.css";
 
 export const metadata: Metadata = {
@@ -22,15 +22,15 @@ export default async function AdminLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const pathname = (await headers()).get("x-pathname") ?? "";
+  if (pathname === "/admin/login") {
+    return children;
+  }
+
   const session = await getSeoSession();
 
   if (!session) {
-    const user = await currentUser();
-    const email =
-      user?.primaryEmailAddress?.emailAddress ??
-      user?.emailAddresses[0]?.emailAddress ??
-      null;
-    return <AccessDenied email={email} />;
+    redirect("/admin/login");
   }
 
   return (
@@ -40,13 +40,11 @@ export default async function AdminLayout({
         <header className="admin-topbar">
           <div className="admin-topbar__title">Elite Solutions · Admin Panel</div>
           <div className="admin-topbar__actions">
-            <UserButton
-              appearance={{
-                elements: {
-                  avatarBox: "admin-avatar",
-                },
-              }}
-            />
+            <form action={logoutAdmin}>
+              <button className="admin-btn admin-btn--ghost" type="submit">
+                Sign out
+              </button>
+            </form>
           </div>
         </header>
         <div className="admin-content">{children}</div>
