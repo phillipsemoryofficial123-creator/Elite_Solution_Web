@@ -1,7 +1,7 @@
 import { ServiceNewsletter } from "@/components/service-newsletter";
 import { SiteFooter } from "@/components/site-footer";
 import EclipseSplash from "@/components/eclipse-splash";
-import { RonotChat } from "@/components/ronot-chat";
+import { RobotChat } from "@/components/robot-chat/robot-chat";
 import { ScrollProgress } from "@/components/scroll-progress";
 import { SiteHeader } from "@/components/site-header";
 
@@ -18,7 +18,7 @@ export default function SiteLayout({
       <main className="flex-1">{children}</main>
       <ServiceNewsletter />
       <SiteFooter />
-      <RonotChat />
+      <RobotChat />
     </>
   );
 }
